@@ -1,0 +1,37 @@
+.container{
+    background-color: rgb(216, 226, 226);
+    border-radius: 10px;
+}
+
+.titulo{
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.uploadResume{
+    margin-left: 40%;
+    margin-bottom: 20px;
+}
+
+.exibeNomeCurriculo{
+    margin-left: 33%;
+    width: 40%;
+    margin-bottom: 20px;
+}
+
+#labelNomeArquivo, #nomeArquivo, #btnExcluir{
+    display: inline-block;
+}
+
+#btnExcluir{
+    height: 10px;
+}
+
+#nomeArquivo{
+    margin-left: 1%;
+}
+
+.exibeCurriculo{
+    margin-left: 42%;
+}

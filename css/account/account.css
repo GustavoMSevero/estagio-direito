@@ -1,0 +1,21 @@
+.container{
+    background-color: rgb(216, 226, 226);
+    border-radius: 10px;
+}
+
+.linkDados{
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.links{
+    background-color: white;
+    width: 50%;
+    border-radius: 10px;
+    margin-left: 25%;
+}
+
+.todosOsLinks{
+    margin-left: 5%;
+}
+

@@ -1,0 +1,49 @@
+<div class="container" ng-controller="resumeCtrl">
+    <div class="row">
+        <div class="topo">
+            <div id="logo">
+                logo
+            </div>
+            <div id="links">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/searchInternship">Procurar Estágios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#/account">Conta</a>
+                    </li>
+                    <div class="user">
+                        {{name}} - {{usertype}}
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        
+    </div>
+    
+    <div class="row">
+        <div class="col-12 col-sm-12 col-lg-12 uploadResume">
+            <form name="formResume">
+              <button class="btn btn-primary" type="button" ng-click="uploadPDF()">Selecionar PDF</button>
+            </form>
+        </div>
+        
+        <div class="exibeNomeCurriculo">
+          <div id="labelNomeArquivo">
+            Nome do Arquivo: 
+          </div>
+          <div id="nomeArquivo">
+            {{resumeName}}
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="exibeCurriculo">
+        <!-- <p><a href="{{resumeView}}" target="_black">Abrir arquivo PDF</a></p> -->
+      </div>
+    </div>
+
+</div>

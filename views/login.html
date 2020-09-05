@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 titulo">
+            <h1>login</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="formLogin">
+            <form name="formLogin" ng-controller="loginCtrl">
+                <div id="login">
+                    <input class="form-control emailLogin" type="text" name="email" ng-model="user.email" id="" placeholder="E-mail">
+                </div>
+                <div>
+                    <input class="form-control passwordLogin" type="password" name="password" ng-model="user.password"  id="" placeholder="Senha">
+                </div>
+                <div id="btnLogin">
+                    <button class="btn btn-success btn-block" ng-click="loginUser(user)" >Acessar</button>
+                </div>
+                <!-- <div id="btnCastrar">
+                    <p class="text-center mt-15">Não tem cadastro ainda? <a href="#/cadastro">Cadastre-se</a></p>
+                </div> -->
+                <a class="btn btn-default btn-block" href="#/">Voltar</a>
+            </form>
+            {{msgLoginErro}}
+        </div>
+    </div>
+    
+</div>

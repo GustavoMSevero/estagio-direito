@@ -1,0 +1,57 @@
+<div class="container" ng-controller="showInterestedStudentsCtrl">
+    <div class="row">
+        <div class="topo">
+            <div id="logo">
+                logo
+            </div>
+            <div id="links">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/searchInternship">Procurar Estágios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#/account">Conta</a>
+                    </li>
+                    <div class="user">
+                        {{name}} - {{usertype}}
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        
+    </div>
+    
+    <div class="row">
+        <div class="col-12 col-sm-12 col-lg-12">
+            <div class="interestedStudentsList">
+                <div>
+                    Listagem de estudantes interessados
+                </div>
+
+                <div class="dataStudentsList">
+                    <table>
+                        <thead>
+                            <td width="150"><b>Estudante</b></td>
+                            <td width="150"><b>Universidade</b></td>
+                            <td width="150"><b>Semestre</b></td>
+                            <td width="150"><b>Localidade</b></td>
+                            <td width="150"></td>
+                        </thead>
+                        <!-- <tr ng-repeat="lv in listVacancies">
+                            <td>{{lv.performanceArea}}</td>
+                            <td>{{lv.activities}}</td>
+                            <td align="right">{{lv.internshipWorth}}</td>
+                            <td align="right">{{lv.publishDate}}</td>
+                            <td align="right"><a href="#/showInterestedStudents/{{lv.idvacancy}}">Interessados</a></td>
+                        </tr> -->
+                    </table>
+                </div>
+
+            </div>
+            <a class="btn btn-default btn-block" href="#/vacancyList">VOLTAR</a>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,41 @@
+.container{
+    background-color: rgb(216, 226, 226);
+    border-radius: 10px;
+}
+
+#formChangeData{
+    margin-left: 35%;
+    margin-top: 40px;
+}
+
+/* #btnUpdateData {
+    margin-top: 20px;
+    margin-bottom: 20px;
+} */
+
+.formCollegeDataUpdate {
+    margin-left: 35%;
+    margin-top: 20px;
+}
+
+.universityName {
+    width: 40%;
+}
+
+.startYear {
+    width: 40%;
+}
+
+.conclusionYear {
+    width: 40%;
+}
+
+.OABNumberCard {
+    width: 40%;
+}
+
+#btnUpdateCollegeData {
+    width: 40%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

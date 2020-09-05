@@ -1,0 +1,102 @@
+<div class="container" ng-controller="accountCtrl">
+    <!-- <div class="row">
+        <div class="col-12 titulo">
+            <h1>CONTA</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <nav class="navbar navbar-expand-lg navbar-light navBarCustom">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item">
+                      <a class="nav-link" ng-click="logout()">Sair</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link" href="#/searchInternship" role="button" aria-haspopup="true" aria-expanded="true">
+                        Voltar
+                      </a>
+                    </li>
+                  </ul>
+                  {{name}}
+                </div>
+              </nav>
+        </div>
+    </div> -->
+
+    <div class="row">
+        <div class="topo">
+            <div id="logo">
+                logo
+            </div>
+            <div id="links">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/searchInternship">Procurar Estágios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#/account">Conta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ng-click="logout()">Sair</a>
+                    </li>
+                    <div class="user">
+                        {{name}} - {{usertype}}
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-12 col-lg-12 linkDados">
+            <div class="links">
+                <div class="todosOsLinks">
+                    <div id="">
+                        <a href="#/changeEmail">Alterar email</a>
+                    </div>
+                    <div id="">
+                        <a href="#/changePassword">Alterar senha</a>
+                    </div>
+                    <div ng-show="{{student}}" id="">
+                        <a href="#/otherData">Demais dados</a>
+                    </div>
+
+                    <div ng-show="{{student}}" id="">
+                        <a href="#/studentAddress">Endereço</a>
+                    </div>
+
+                    <div ng-show="{{student}}" id="">
+                        <a href="#/collegeData">Dados universitários</a>
+                    </div>
+                    <div ng-show="{{student}}" id="">
+                        <a href="#/resume">Currículo</a>
+                    </div>
+
+                    <div ng-show="{{office}}" id="">
+                        <a href="#/officeData">Dados escritório</a>
+                    </div>
+                    <div ng-show="{{office}}" id="">
+                        <a href="#/advertiseVacancy">Anunciar vagas</a>
+                    </div>
+                    <div ng-show="{{office}}" id="">
+                        <a href="#/vacancyList">Minha lista de vagas</a>
+                    </div>
+                    <div ng-show="{{office}}" id="">
+                        <a href="#/registerBanners">Cadastrar banners</a>
+                    </div>
+
+                    <div ng-show="{{college}}" id="">
+                        <a href="#/dadosFaculdade">Dados Faculdade</a>
+                    </div>
+
+                    <div ng-show="{{college}}" id="">
+                        <a href="#/cadastrarBanners">Cadastrar banners</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

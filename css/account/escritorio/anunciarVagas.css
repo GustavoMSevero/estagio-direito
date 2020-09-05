@@ -1,0 +1,173 @@
+.container{
+    background-color: rgb(216, 226, 226);
+    border-radius: 10px;
+}
+
+.titulo{
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.formAnunciar{
+    width: 40%;
+    margin-left: 30%;
+}
+
+#localizacao{
+    margin-top: 10px;
+}
+
+#escolaridadeMinima{
+    margin-top: 10px;
+}
+
+#informatica{
+    margin-top: 10px;
+}
+
+#inputExcel{
+    display: inline-block;
+    width: 5%;
+    height: 25px;
+}
+
+#textoExcel{
+    display: inline-block;
+}
+
+#inputOutlook{
+    display: inline-block;
+    width: 5%;
+    height: 25px;
+}
+
+#textoOutlook{
+    display: inline-block;
+}
+
+#inputWord{
+    display: inline-block;
+    width: 5%;
+    height: 25px;
+}
+
+#textoWord{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+#inputTi{
+    display: inline-block;
+    width: 5%;
+    height: 25px;
+    margin-left: 2px;
+}
+
+#textoTi{
+    display: inline-block;
+}
+
+#anoCurso{
+    margin-top: 10px;
+}
+
+#segundoIdioma{
+    margin-top: 10px;
+}
+
+.segundoIdioma{
+    margin-bottom: 20px;
+}
+
+#qualIdioma{
+    margin-top: 10px;
+}
+
+#jaEstagiou{
+    margin-top: 10px;
+}
+
+.estagiou{
+    margin-bottom: 10px;
+}
+
+#inputIdiomaSim{
+    display: inline-block;
+    width: 5%;
+    height: 25px;
+}
+
+#textoSim{
+    display: inline-block;
+}
+
+#inputIdiomaNao{
+    display: inline-block;
+    width: 5%;
+    height: 25px;
+}
+
+#textoNao{
+    display: inline-block;
+}
+
+#inputEstagiouSim{
+    display: inline-block;
+    width: 5%;
+    height: 25px;
+}
+
+#textoEstagiouSim{
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+#inputEstagiouNao{
+    display: inline-block;
+    width: 5%;
+    height: 25px;
+}
+
+#textoEstagiouNao{
+    display: inline-block;
+}
+
+.bolsaEstagio{
+    margin-bottom: 10px;
+}
+
+.valeTransporte{
+    margin-bottom: 10px;
+}
+
+.atividades{
+    margin-top: 10px;
+}
+
+.quantasVagas{
+    margin-top: 10px;
+}
+
+.previsaoInicio{
+    margin-top: 10px;
+}
+
+.possibilidadeEfetivacao{
+    margin-top: 10px;
+}
+
+.observacao{
+    margin-top: 20px;
+}
+
+
+#btnAnunciarVaga{
+    margin-top: 20px;
+}
+
+.listaExibicaoVagas{
+    margin-top: 30px;
+    width: 40%;
+    margin-left: 30%;
+}

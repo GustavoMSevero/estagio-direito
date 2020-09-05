@@ -1,0 +1,42 @@
+
+.leftSide, .rightSide {
+    display: inline-block;
+}
+
+.leftSide {
+    width: 45%;
+    /* background-color: lightskyblue; */
+}
+
+.rightSide {
+    width: 53%;
+    /* background-color: lightslategrey; */
+}
+
+.top {
+    width: 100%;
+}
+
+#logo, #linkLogin {
+    display: inline-block;
+}
+
+#logo {
+    width: 20%;
+}
+
+#linkLogin {
+    width: 20%;
+    margin-left: 50%;
+}
+
+.cadastro {
+    width: 50%;
+    margin-left: 15%;
+    margin-top: 30px;;
+}
+
+
+#btnSalvar {
+    margin-top: 10px;
+}

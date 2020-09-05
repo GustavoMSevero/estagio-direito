@@ -1,0 +1,132 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-ms-4 leftSide">
+            <div id="banner">
+                <img src="./imgs/banner.png" width="450" alt="Banner">
+            </div>
+        </div>
+
+        <div class="col-ms-8 rightSide">
+            <div class="top">
+                <div id="logo">
+                    <!-- <img src="./imgs/logo-and-title.png" width="250" height="100" alt=""> -->
+                    <P>Estágio de Direito</P>
+                </div>
+                <div id="linkLogin">
+                    faça seu <a href="#/login">login</a>
+                </div>
+            </div>
+
+            <div class="cadastro" ng-controller="initialCtrl">
+                <form name="formCadastro" >
+                    <div id="tipo">
+                        <select class="form-control" name="selectType" ng-model="type" id="" ng-change="changeType()" required>
+                            <option value="">Selecione o tipo...</option>
+                            <option value="Escritório">Escritório de advocacia</option>
+                            <option value="Estudante">Estudante de Direito</option>
+                            <option value="Faculdade">Faculdade de Direito</option>
+                        </select>
+                    </div>
+    
+                    <div id="nomeEscritorio" ng-hide="type != 'Escritório' ">
+                        <input class="form-control" type="text" name="name" ng-model="user.nameOffice" id="" placeholder="Nome do escritório">
+                    </div>
+                    <div id="cep" ng-hide="type != 'Escritório' ">
+                        <input class="form-control" type="text" name="zipcode" ng-blur="getZipcode(user)" ng-model="user.zipcode" id="" placeholder="CEP">
+                    </div>
+                    <div id="endereco" ng-hide="type != 'Escritório' ">
+                        <input class="form-control" type="text" name="address" ng-model="user.logradouro" id="" placeholder="Endereço">
+                    </div>
+                    <div id="numero" ng-hide="type != 'Escritório' ">
+                        <input class="form-control" type="text" name="addressNumber" ng-model="user.addressNumber" id="" placeholder="Número">
+                    </div>
+                    <div id="complemento" ng-hide="type != 'Escritório' ">
+                        <input class="form-control" type="text" name="complement" ng-model="user.complement" id="" placeholder="Complemento">
+                    </div>
+                    <div id="cidade" ng-hide="type != 'Escritório' ">
+                        <input class="form-control" type="text" name="city" ng-model="user.localidade" id="" placeholder="Cidade">
+                    </div>
+                    <div id="bairro" ng-hide="type != 'Escritório' ">
+                        <input class="form-control" type="text" name="neighborhood" ng-model="user.bairro" id="" placeholder="Bairro">
+                    </div>
+                    <div id="estado" ng-hide="type != 'Escritório' ">
+                        <input class="form-control" type="text" name="state" ng-model="user.uf" id="" placeholder="Estado">
+                    </div>
+                    <div id="abrirVaga" ng-hide="type != 'Escritório' ">
+                        <span>Tem interesse em abrir vaga para estágio?</span>
+                        <select class="form-control" name="openVacancy" ng-model="user.openVacancy" id="">
+                            <option value="">Selecione...</option>
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select>
+                    </div>
+    
+    
+    
+    
+                    <div id="nomeCompleto" ng-hide="type != 'Estudante' ">
+                        <input class="form-control" type="text" name="fullName" ng-model="user.fullname" id="" placeholder="Nome completo">
+                    </div>
+                    <div id="anoIncioFaculdade" ng-hide="type != 'Estudante' ">
+                        <input class="form-control" type="number" name="starYear" ng-model="user.startYear" id="" placeholder="Ano de início faculdade">
+                    </div>
+                    <div id="anoConclusaoFaculdade" ng-hide="type != 'Estudante' ">
+                        <input class="form-control" type="number" name="conclusionYear" ng-model="user.conclusionYear" id="" placeholder="Ano de conclusão">
+                    </div>
+                    <div id="nomeFaculdade" ng-hide="type != 'Estudante' ">
+                        <select class="form-control" name="universityName" ng-model="user.universityName" id="">
+                            <option value="">Selecione a universidade</option>
+                            <option value="PUCRS">PUCRS</option>
+                        </select>
+                    </div>
+                    <div id="idade" ng-hide="type != 'Estudante' ">
+                        <input class="form-control" type="date" name="studantAge" ng-model="user.studantAge" id="" placeholder="01/01/2020">
+                    </div>
+                    <div id="sexo" ng-hide="type != 'Estudante' ">
+                        <select class="form-control" name="studantAge" ng-model="user.sex" id="">
+                            <option value="">Selecione o sexo...</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Feminino</option>
+                        </select>
+                    </div>
+                    <div id="numeroCarteiraABO" ng-hide="type != 'Estudante' ">
+                        <input class="form-control" type="number" name="OABNumberCard" ng-model="user.OABNumberCard" id="" placeholder="Número da carteira OAB (Caso tenha)">
+                    </div>
+    
+    
+    
+    
+    
+    
+                    <div id="nomeDaFaculdade" ng-hide="type != 'Faculdade' ">
+                        <input class="form-control" type="text" name="collegeName" ng-model="user.collegeName" id="" placeholder="Nome da faculdade">
+                    </div>
+                    <div id="nomeCoordenador" ng-hide="type != 'Faculdade' ">
+                        <input class="form-control" type="text" name="coordinatorName" ng-model="user.coordinatorName" id="" placeholder="Nome do Coordendor">
+                    </div>
+                    <div id="telefoneContato" ng-hide="type != 'Faculdade' ">
+                        <input class="form-control" type="text" name="contactPhone" ng-model="user.contactPhone" id="" placeholder="Telefone de contato com DDD">
+                    </div>
+    
+                    <div id="siteFaculdade" ng-hide="type != 'Faculdade' ">
+                        <input class="form-control" type="text" name="siteCollege" ng-model="user.siteCollege" id="" placeholder="Site da faculdade">
+                    </div>
+    
+    
+    
+                    <div id="email">
+                        <input class="form-control" type="email" name="email" ng-model="user.email" id="" placeholder="E-mail">
+                    </div>
+                    <div id="senha">
+                        <input class="form-control" type="password" name="password" ng-model="user.password" placeholder="Senha">
+                    </div>
+    
+    
+                    <div id="btnSalvar">
+                        <button class="btn btn-success btn-block" ng-click="register(user)">CADASTRAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

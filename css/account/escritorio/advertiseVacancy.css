@@ -1,0 +1,80 @@
+.container{
+    background-color: rgb(216, 226, 226);
+    border-radius: 10px;
+}
+
+.formAdvertiseVacancy {
+    margin-top: 20px;
+    margin-left: 30%;
+}
+
+.performanceArea {
+    width: 50%;
+}
+.zipcode {
+    width: 50%;
+}
+.bairro {
+    width: 50%;
+}
+.localidade {
+    width: 50%;
+}
+.uf {
+    width: 50%;
+}
+.minimumSchooling {
+    width: 50%;
+}
+.tiKnowledge {
+    width: 50%;
+}
+.secLan {
+    width: 50%;
+}
+.secondLanguage {
+    width: 50%;
+}
+.alreadyInterned {
+    width: 50%;
+}
+
+#beneficios {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.internshipWorth {
+    width: 50%;
+}
+.transportationWorth {
+    width: 50%;
+}
+.mealWorth {
+    width: 50%;
+}
+.activities {
+    width: 50%;
+}
+.numberOfVacancy {
+    width: 50%;
+}
+.whenStart {
+    width: 50%;
+}
+.effectuation {
+    width: 50%;
+}
+.observation {
+    width: 50%;
+}
+
+#btnAdvertiseVacancy {
+    margin-top: 20px;
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+/* .listaExibicaoVagas {
+    margin-left: 10%;
+} */

@@ -1,0 +1,231 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 titulo">
+            <h1>VAGA ESTÁGIO</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <nav class="navbar navbar-expand-lg navbar-light navBarCustom">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <!-- <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li> -->
+                    <li class="nav-item">
+                      <a class="nav-link" ng-click="logout()">Sair</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link" href="#/conta" role="button" aria-haspopup="true" aria-expanded="true">
+                        Voltar
+                      </a>
+                    </li>
+                  </ul>
+                  {{name}}
+                </div>
+              </nav>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-12 col-sm-12 col-lg-12" ng-controller="anunciarVagasCtrl">
+            <div class="formAnunciar">
+                <form name="formAnunciarVagas">
+                    Área de atuação do escritório
+                    <select class="form-control" name="performanceArea" ng-model="openVacancyOffice.performanceArea" id="">
+                      <option value="">Selecione a área...</option>
+                      <option value="Ambiental">Ambiental</option>
+                      <option value="Empresarial">Empresarial</option>
+                      <option value="Civil">Civil</option>
+                      <option value="Criminal">Criminal</option>
+                      <option value="Penal">Penal</option>
+                      <option value="Trabalhista">Trabalhista</option>
+                      <option value="Tributario">Tributário</option>
+                    </select>
+                    
+                    <div id="localizacao">
+                      Localização
+                    </div>
+                    <input class="form-control" type="text" ng-blur="getZipcode(openVacancyOffice)" name="zipcode" ng-model="openVacancyOffice.zipcode" id=""
+                    placeholder="CEP">
+                    <input class="form-control" type="text" name="bairro" ng-model="openVacancyOffice.bairro" id="" placeholder="Bairro">
+                    <input class="form-control" type="text" name="localidade" ng-model="openVacancyOffice.localidade" id="" placeholder="Cidade">
+                    <input class="form-control" type="text" name="uf" ng-model="openVacancyOffice.uf" id="" placeholder="Estado">
+
+                    <div id="escolaridadeMinima">
+                      Semestre da faculdade
+                    </div>
+          
+                    <select class="form-control" name="minimumSchooling" ng-model="openVacancyOffice.minimumSchooling" id="">
+                      <option value="">Selecione...</option>
+                      <option value="0">Sem exigência</option>
+                      <option value="1º">1º semestre</option>
+                      <option value="2º">2º semestre</option>
+                      <option value="3º">3º semestre</option>
+                      <option value="4º">4º semestre</option>
+                      <option value="5º">5º semestre</option>
+                      <option value="6º">6º semestre</option>
+                      <option value="7º">7º semestre</option>
+                      <option value="8º">8º semestre</option>
+                      <option value="9º">9º semestre</option>
+                      <option value="10">Último semestre</option>
+                    </select>
+
+                    <div id="informatica">
+                      Conhecimento em Informática
+                    </div>
+                    
+                    <input class="form-control" type="text" name="ti" ng-model="openVacancyOffice.tiKnowledge" id="" placeholder="Word, Excel...">
+                    <!-- <div class="excel">
+                      <div id="inputExcel">
+                        <input class="form-control" type="checkbox" name="msExcel" ng-model="openVacancyOffice.MSExcel" id="">
+                      </div>
+                      <div id="textoExcel">
+                        Microsoft Excel
+                      </div>
+                    </div>
+  
+                    <div class="outlook">
+                      <div id="inputOutlook">
+                        <input class="form-control" type="checkbox" name="msOutlook" ng-model="openVacancyOffice.MSOutlook" id="">
+                      </div>
+                      <div id="textoOutlook">
+                        Microsoft Outlook
+                      </div>
+                    </div>
+                    
+                    <div class="word">
+                      <div id="inputWord">
+                        <input class="form-control" type="checkbox" name="msWord" ng-model="openVacancyOffice.MSWord" id="">
+                      </div>
+                      <div id="textoWord">
+                        Microsoft Word
+                      </div>
+                    </div> -->
+                    <!-- <div ng-repeat='openVacancyOffice in taskList'>
+                      <div id="inputTi">
+                        <input type='checkbox' ng-model='openVacancyOffice.ti' />
+                      </div>
+                      <div id="textoTi">
+                        {{openVacancyOffice.openVacancyOffice}}
+                      </div>
+                    </div>
+                    <input type='text' ng-model='newTask' />
+                    <button ng-click='addTask(newTask)'>Adicionar</button> -->
+
+
+                    <div id="segundoIdioma">
+                      Segundo idioma?
+                    </div>
+                      
+                      <select class="form-control" name="secLan" ng-model="openVacancyOffice.secLan" id="">
+                        <option value="">Selecione...</option>
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                      </select>
+
+                    <div id="qualIdioma">
+                      <input class="form-control segundoIdioma" type="text" name="secondLanguage" ng-model="openVacancyOffice.secondLanguage" id=""
+                      placeholder="Se sim, qual?">
+                    </div>
+
+
+                    <div id="jaEstagiou">
+                      Já estagiou?
+                    </div>
+                    
+                    <div class="estagiou">
+                      <select class="form-control" name="alreadyInterned" ng-model="openVacancyOffice.alreadyInterned" id="">
+                        <option value="">Selecione...</option>
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                      </select>           
+                    </div>
+
+                    <div id="beneficios">
+                      Benefícios
+                    </div>
+
+                    <div class="bolsaEstagio">
+                      Valor bolsa-estágio
+                      <input class="form-control" type="text" name="internshipWorth" ng-model="openVacancyOffice.internshipWorth">
+                    </div>
+                    
+                    <div class="valeTransporte">
+                      Vale transporte?
+                      <select class="form-control" name="transportation" ng-model="openVacancyOffice.transportationWorth" id="">
+                        <option value="">Selecione...</option>
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                      </select>
+                    </div>
+
+                    <div class="valeRefeicao">
+                      Vale refeição?
+                      <select class="form-control" name="meal" ng-model="openVacancyOffice.mealWorth" id="">
+                        <option value="">Selecione...</option>
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                      </select>
+                    </div>
+
+                    <div class="atividades">
+                      Atividades do estagiário:
+                      <input class="form-control" type="text" name="activities" ng-model="openVacancyOffice.activities">
+                    </div>
+
+                    <div class="quantasVagas">
+                      Quantas vagas?
+                      <input class="form-control" type="number" name="numberOfVacancy" ng-model="openVacancyOffice.numberOfVacancy">
+                    </div>
+
+                    <div class="previsaoInicio">
+                      Previsão de início
+                      <input class="form-control" type="text" name="whenStart" ng-model="openVacancyOffice.whenStart" placeholder="20/01/2020">
+                    </div>
+
+                    <div class="possibilidadeEfetivacao">
+                      Possibilidade de efetivação pós-estágio?
+                      <select class="form-control" name="effectuation" ng-model="openVacancyOffice.effectuation" id="">
+                        <option value="">Selecione...</option>
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                      </select>
+                    </div>
+                    
+                    <div class="observacao">
+                      Observação
+                      <div id="observacao">
+                        <textarea class="form-control" name="observation" ng-model="openVacancyOffice.observation" id="" cols="30" rows="5"></textarea>
+                      </div>
+                    </div>
+                    
+
+                    <div id="btnAnunciarVaga">
+                        <button class="btn btn-success btn-block" ng-click="registerVacancy(openVacancyOffice)">ANUNCIAR VAGA</button>
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="listaExibicaoVagas">
+              <table class="table table-striped">
+                <trhead>
+                  <td>ID Vaga</td>
+                  <td>Data Cadastro</td>
+                  <td>Bolsa-estágio</td>
+                  <td></td>
+                </trhead>
+                <tbody>
+                  <tr ng-repeat="lov in listaOfVacancys">
+                    <td>{{lov.idvacancy}}</td>
+                    <td>{{lov.publishDate}}</td>
+                    <td>{{lov.internshipWorth}}</td>
+                    <td><a href="#/editarVaga/{{lov.idvacancy}}">editar</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+</div>

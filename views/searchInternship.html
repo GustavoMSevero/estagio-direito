@@ -1,0 +1,124 @@
+<div class="container" ng-controller="searchInternShipCtrl">
+    <div class="row">
+        <div class="topo">
+            <div id="logo">
+                logo
+            </div>
+            <div id="links">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/searchInternship">Procurar Estágios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/account">Conta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ng-click="logout()">Sair</a>
+                    </li>
+                    <div class="user">
+                        {{name}} - {{usertype}}
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-ms-8 searchSide">
+            <div id="formSearchIntership">
+                <form name="formSearch">
+                    <div id="semester">
+                        Semestre
+                    </div>
+                    <div id="stateLabel">
+                        Estado
+                    </div>
+                    <div id="cityLabel">
+                        Cidade
+                    </div>
+                    
+                    <div class="inputs">
+                        <select class="form-control semester" name="semester" ng-model="vacancy.semester" required> 
+                            <option value="">Selecione...</option>
+                            <option value="0">Sem exigência</option>
+                            <option value="1º">1º semestre</option>
+                            <option value="2º">2º semestre</option>
+                            <option value="3º">3º semestre</option>
+                            <option value="4º">4º semestre</option>
+                            <option value="5º">5º semestre</option>
+                            <option value="6º">6º semestre</option>
+                            <option value="7º">7º semestre</option>
+                            <option value="8º">8º semestre</option>
+                            <option value="9º">9º semestre</option>
+                            <option value="10">Último semestre</option>
+                        </select>
+        
+                        <select class="form-control state" name="state" ng-model="vacancy.state" id="">
+                            <option value="">Selecione...</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                    
+                        <input class="form-control city" type="text" name="cidade" ng-model="vacancy.city"> 
+        
+                        <button class="btn btn-primary" ng-click="searchForVacancy(vacancy)">Buscar</button>
+                    </div>
+        
+                </form>
+            </div>
+        </div>
+        <div class="col-ms-4 publicitySide">
+            publicidade
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="allAdds">
+            <div id="paidAdds">
+                Anúncios pagos
+            </div>
+
+            <div id="perfil">
+                <div class="listaExibicaoVagas">
+                    <table class="table table-striped">
+                      <tbody>
+                        <tr ng-repeat="v in allVacancies">
+                          <td> Área Direito {{v.performanceArea}}</td>
+                          <td> {{v.whenStart}} - {{v.neighborhood}} - {{v.city}}, {{v.state}} </td>
+                          <td> <a href="#/checkVacancy/{{v.idvacancy}}"> ver </a> </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+            </div>
+
+        </div>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,63 @@
+<div class="container" ng-controller="studentAddressCtrl">
+    <div class="row">
+        <div class="topo">
+            <div id="logo">
+                logo
+            </div>
+            <div id="links">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/searchInternship">Procurar Estágios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#/account">Conta</a>
+                    </li>
+                    <div class="user">
+                        {{name}} - {{usertype}}
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        
+    </div>
+    
+    <div class="row">
+        <div class="col-12 col-sm-12 col-lg-12">
+            <div class="formStudentAddress">
+                <form name="formStudentAddress">
+                    <div id="labelCEP">
+                        CEP
+                    </div>
+                    <input class="form-control studentZipcodeAddress" type="text" name="cep" ng-blur="getZipcode(studentAddress)" ng-model="studentAddress.cep">
+
+                    <div id="labelLogradouro">
+                        Logradouro
+                    </div>
+                    <input class="form-control studentLogradouro" type="text" name="logradouro" ng-model="studentAddress.logradouro">
+
+                    <div id="labelNeighborhood">
+                        Bairro
+                    </div>
+                    <input class="form-control studentBairro" type="text" name="bairro" ng-model="studentAddress.bairro">
+
+                    <div id="labelLocalidade">
+                        Cidade
+                    </div>
+                    <input class="form-control studentLocalidade" type="text" name="localidade" ng-model="studentAddress.localidade">
+
+                    <div id="labelUF">
+                        UF
+                    </div>
+                    <input class="form-control studentUF" type="text" name="uf" ng-model="studentAddress.uf">
+
+                    <div id="btnStudentAddress">
+                        <button class="btn btn-success btn-block" ng-click="saveStudentAddress(studentAddress)">SALVAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

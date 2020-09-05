@@ -1,0 +1,19 @@
+.container{
+    background-color: rgb(216, 226, 226);
+    border-radius: 10px;
+}
+
+.btnUploadBanner {
+    /* background-color: greenyellow; */
+    width: 20%;
+    margin-top: 20px;
+    margin-left: 35%;
+}
+
+.exibeBanner {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* margin-left: 35%; */
+    align-content: center;
+    align-items: center;
+}

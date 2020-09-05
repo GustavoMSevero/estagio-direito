@@ -1,0 +1,55 @@
+<div class="container" ng-controller="dadosEscritorioCtrl">
+    <div class="row">
+        <div class="col-12 titulo">
+            <h1>DADOS ESCRITÓRIO</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <nav class="navbar navbar-expand-lg navbar-light navBarCustom">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <!-- <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li> -->
+                    <li class="nav-item">
+                      <a class="nav-link" ng-click="logout()">Sair</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link" href="#/conta" role="button" aria-haspopup="true" aria-expanded="true">
+                        Voltar
+                      </a>
+                    </li>
+                  </ul>
+                  {{name}}
+                </div>
+              </nav>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-12 col-sm-12 col-lg-12">
+            <div id="formUpdate">
+                <form name="formUpdateOfficeData">
+                    <input class="form-control" type="text" name="age" ng-model="userOffice.officeName" placeholder="Nome Escritório">
+                    <input class="form-control" type="text" name="zipcode" ng-blur="getZipcode(userOffice)" ng-model="userOffice.zipcode" placeholder="CEP">
+                    <input class="form-control" type="text" name="logradouro" ng-model="userOffice.logradouro" placeholder="Endereço">
+                    <input class="form-control" type="text" name="addressNumber" ng-model="userOffice.addressNumber" placeholder="Número">
+                    <input class="form-control" type="text" name="complement" ng-model="userOffice.complement" placeholder="Complemento">
+                    <input class="form-control" type="text" name="bairro" ng-model="userOffice.bairro" placeholder="Bairro">
+                    <input class="form-control" type="text" name="localidade" ng-model="userOffice.localidade" placeholder="Cidade">
+                    <input class="form-control" type="text" name="uf" ng-model="userOffice.uf" placeholder="Estado">
+                    <select class="form-control" name="openVacancy" ng-model="userOffice.openVacancy" id="">
+                        <option value=""></option>
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
+                    <div id="btnAtualizar">
+                        <button class="btn btn-success btn-block" ng-click="UpdateOfficeData(userOffice)">ATUALIZAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,41 @@
+<div class="container" ng-controller="interestedListCtrl">
+    <div class="row">
+        <div class="topo">
+            <div id="logo">
+                logo
+            </div>
+            <div id="links">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/searchInternship">Procurar Estágios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#/account">Conta</a>
+                    </li>
+                    <div class="user">
+                        {{name}} - {{usertype}}
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        
+    </div>
+    
+    <div class="row">
+        <div class="col-12 col-sm-12 col-lg-12">
+            <div class="exibeLista">
+                <div class="labels">
+                    <div id="labelNomeEstudante">Estudante</div>
+                    <div id="labelMensagem">Mensagem</div>
+                </div>
+                <div class="nomeMensagem" ng-repeat="stu in students">
+                    <div id="nomeEstudante"><a href="#/verEstudante/{{stu.iduser}}">{{stu.studentName}}</a></div>
+                    <div id="mensagem">{{stu.message}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

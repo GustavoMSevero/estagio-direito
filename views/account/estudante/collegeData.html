@@ -1,0 +1,58 @@
+<div class="container" ng-controller="collegeDataCtrl">
+    <div class="row">
+        <div class="topo">
+            <div id="logo">
+                logo
+            </div>
+            <div id="links">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/searchInternship">Procurar Estágios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#/account">Conta</a>
+                    </li>
+                    <div class="user">
+                        {{name}} - {{usertype}}
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        
+    </div>
+    
+    <div class="row">
+        <div class="col-12 col-sm-12 col-lg-12">
+            <div class="formCollegeDataUpdate">
+                <form name="formUpdateStudentData">
+
+                    <div id="labelNomeUniversidade">
+                        Universidade
+                    </div>
+                    <select class="form-control universityName" name="sex" ng-model="userStudent.universityName" id="">
+                        <option value="PUCRS">PUCRS</option>
+                    </select>
+
+                    <div id="labelAnoInicio">
+                        Ano início
+                    </div>
+                    <input class="form-control startYear" type="text" name="startYear" ng-model="userStudent.startYear">
+                    <div id="labelDataConclusao">
+                        Ano conclusão
+                    </div>
+                    <input class="form-control conclusionYear" type="text" name="conclusionYear" ng-model="userStudent.conclusionYear">
+                    <div id="labelOABNumCar">
+                        OAB
+                    </div>
+                    <input class="form-control OABNumberCard" type="text" name="OABNumberCard" ng-model="userStudent.OABNumberCard">
+                    <div id="btnUpdateCollegeData">
+                        <button class="btn btn-success btn-block" ng-click="updateStudentData(userStudent)">ATUALIZAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

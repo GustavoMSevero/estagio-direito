@@ -1,0 +1,44 @@
+<div class="container" ng-controller="changeEmailCtrl">
+    <div class="row">
+        <div class="topo">
+            <div id="logo">
+                logo
+            </div>
+            <div id="links">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/searchInternship">Procurar Estágios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/account">Conta</a>
+                    </li>
+                    <div class="user">
+                        {{name}} - {{usertype}}
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        
+    </div>
+
+    <div class="row">
+        <div id="formChangeEmail">
+            <div id="currentEmail">
+                E-mail atual: {{email}}
+            </div>
+            <form action="">
+                <input class="form-control" type="email" name="" ng-model="student.email" id="">
+
+                <div id="btnUpdateEmail">
+                    <button class="btn btn-success btn-block" ng-click="updateEmail(student)" >Atualizar</button>
+                </div>
+            </form>
+            <div id="msgOK">
+                {{msgOK}}
+            </div>
+        </div>
+    </div>
+
+</div>

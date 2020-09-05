@@ -1,0 +1,64 @@
+<div class="container" ng-controller="dadosUniversitariosCtrl">
+    <div class="row">
+        <div class="col-12 titulo">
+            <h1>DADOS UNIVERSITÁRIOS</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <nav class="navbar navbar-expand-lg navbar-light navBarCustom">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                      <a class="nav-link" href="#/conta" role="button" aria-haspopup="true" aria-expanded="true">
+                        Voltar
+                      </a>
+                    </li>
+                  </ul>
+                  {{name}}
+                </div>
+              </nav>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-12 col-sm-12 col-lg-12">
+            <div id="formUpdate">
+                <form name="formUpdateStudentData">
+                    <div id="labeldataNascimento">
+                        Data nascimento
+                    </div>
+                    <input class="form-control" type="text" name="age" ng-model="userStudent.age">
+                    <div id="labelSexoEstu">
+                        Sexo
+                    </div>
+                    <select class="form-control" name="sex" ng-model="userStudent.sex" id="">
+                        <option value=""></option>
+                        <option value="M">Masculino</option>
+                        <option value="F">Feminino</option>
+                    </select>
+                    <div id="labelNomeUniversidade">
+                        Universidade
+                    </div>
+                    <input class="form-control" type="text" name="universityName" ng-model="userStudent.universityName">
+                    <div id="labelAnoInicio">
+                        Ano início
+                    </div>
+                    <input class="form-control" type="text" name="startYear" ng-model="userStudent.startYear">
+                    <div id="labelDataConclusao">
+                        Ano conclusão
+                    </div>
+                    <input class="form-control" type="text" name="conclusionYear" ng-model="userStudent.conclusionYear">
+                    <div id="labelOABNumCar">
+                        OAB
+                    </div>
+                    <input class="form-control" type="text" name="OABNumberCard" ng-model="userStudent.OABNumberCard">
+                    <div id="btnAtualizarDadosUniversitarios">
+                        <button class="btn btn-success btn-block" ng-click="updateStudentData(userStudent)">ATUALIZAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

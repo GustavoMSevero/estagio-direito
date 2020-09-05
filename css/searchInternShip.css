@@ -1,0 +1,93 @@
+
+.topo {
+    width: 100%;
+}
+
+/* #logo {
+    background-color: tomato;
+    width: 100%;
+    height: 30px;
+} */
+
+#links {
+    background-color: white;
+    width: 100%;
+    height: 40px;
+}
+
+.user {
+    margin-left: 50%;
+    margin-top: 7px;
+}
+
+.searchSide {
+    background-color: wheat;
+    width: 80%;
+}
+
+#formSearchIntership {
+    margin-left: 5%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#semester,
+#stateLabel,
+#cityLabel {
+    display: inline-block;
+}
+
+#semester {
+    /* background-color: tomato; */
+    width: 20%;
+}
+
+#stateLabel {
+    /* background-color: teal; */
+    width: 23%;
+}
+
+#cityLabel {
+    /* background-color: turquoise; */
+    width: 20%;
+}
+
+.semester,
+.state,
+.city {
+    display: inline-block;
+}
+
+.semester {
+    width: 20%;
+}
+
+.state {
+    width: 23%;
+}
+
+.city {
+    width: 20%;
+}
+
+.publicitySide {
+    background-color: teal;
+    width: 20%;
+}
+
+.allAdds {
+    margin-top: 10px;
+    margin-left: 2.5%;
+    width: 75%;
+}
+
+#paidAdds {
+    margin-top: 5px;
+    height: 50px;
+    margin-bottom: 5px;
+    background-color: lightgreen;
+}
+
+#adds {
+
+}

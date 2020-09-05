@@ -1,0 +1,24 @@
+.container{
+    background-color: rgb(216, 226, 226);
+    border-radius: 10px;
+}
+
+.exibeLista {
+    margin-top: 20px;
+    margin-left: 20%;
+}
+
+#labelNomeEstudante,
+#labelMensagem {
+    display: inline-block;
+}
+
+#labelNomeEstudante {
+    /* background-color: gray; */
+    width: 25%;
+}
+
+#labelMensagem {
+    /* background-color: green; */
+    width: 45%;
+}

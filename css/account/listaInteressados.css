@@ -1,0 +1,46 @@
+.container{
+    background-color: rgb(216, 226, 226);
+    border-radius: 10px;
+}
+
+.linkDados{
+    margin-bottom: 20px;
+}
+
+.links{
+    background-color: white;
+    width: 30%;
+    border-radius: 10px;
+    margin-left: 33%;
+}
+
+#labelNomeEstudante, #labelMensagem{
+    display: inline-block;
+}
+
+#labelNomeEstudante{
+    margin-left: 20%;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#labelMensagem{
+    margin-left: 5%;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#nomeEstudante, #mensagem{
+    display: inline-block;
+}
+
+#nomeEstudante{
+    margin-left: 20%;
+    width: 11%;
+    float: left;
+}
+
+#mensagem{
+    margin-left: 6%;
+    width: 50%;
+}

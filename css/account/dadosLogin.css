@@ -1,0 +1,15 @@
+.container{
+    background-color: rgb(216, 226, 226);
+    border-radius: 10px;
+}
+
+.titulo{
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+#btnAtualizarEmail{
+    width: 10%;
+    margin-left: 40%;
+}

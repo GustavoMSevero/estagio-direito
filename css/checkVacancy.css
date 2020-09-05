@@ -1,0 +1,33 @@
+.container{
+    background-color: rgb(216, 226, 226);
+    border-radius: 10px;
+}
+
+.labelsVacancy, .data {
+    display: inline-block;
+}
+
+.labelsVacancy {
+    /* background-color: lightcyan; */
+    margin-top: 20px;
+    margin-left: 20%;
+    width: 20%;
+    margin-bottom: 20px;
+}
+
+.dataVacancy {
+    /* background-color: lightgreen; */
+    margin-top: 20px;
+    width: 40%;
+    margin-bottom: 20px;
+}
+
+#btnMostrarInteresse {
+    width: 60%;
+    margin-left: 20%;
+}
+
+#btnVoltar {
+    width: 60%;
+    margin-left: 20%;
+}

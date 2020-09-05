@@ -1,0 +1,47 @@
+<div class="container" ng-controller="curriculoCtrl">
+    <div class="row">
+        <div class="col-12 titulo">
+            <h1>CURRÍCULO</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <nav class="navbar navbar-expand-lg navbar-light navBarCustom">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                      <a class="nav-link" href="#/conta" role="button" aria-haspopup="true" aria-expanded="true">
+                        Voltar
+                      </a>
+                    </li>
+                  </ul>
+                  {{name}}
+                </div>
+              </nav>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-12 col-sm-12 col-lg-12 uploadResume">
+            <form name="formResume">
+              <button class="btn btn-primary" type="button" ng-click="uploadPDF()">Selecionar PDF</button>
+            </form>
+        </div>
+        
+        <div class="exibeNomeCurriculo">
+          <div id="labelNomeArquivo">
+            Nome do Arquivo: 
+          </div>
+          <div id="nomeArquivo">
+            {{resumeName}}
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="exibeCurriculo">
+        <p><a href="{{resumeView}}" target="_black">Abrir arquivo PDF</a></p>
+      </div>
+    </div>
+
+</div>

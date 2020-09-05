@@ -1,0 +1,24 @@
+.container{
+    background-color: rgb(216, 226, 226);
+    border-radius: 10px;
+}
+
+.uploadResume{
+    margin-top: 20px;
+    margin-left: 40%;
+    margin-bottom: 20px;
+}
+
+.exibeNomeCurriculo{
+    margin-left: 33%;
+    width: 40%;
+    margin-bottom: 20px;
+}
+
+#nomeArquivo{
+    margin-left: 1%;
+}
+
+.exibeCurriculo{
+    margin-left: 42%;
+}

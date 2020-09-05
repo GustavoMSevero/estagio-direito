@@ -1,0 +1,43 @@
+.container{
+    background-color: rgb(216, 226, 226);
+    border-radius: 10px;
+}
+
+.formUpdateOfficeData {
+    margin-top: 20px;
+    margin-left: 30%;
+}
+
+.officeName {
+    width: 50%;
+}
+.zipCode {
+    width: 50%;
+}
+.logradouro {
+    width: 50%;
+}
+.addressNumber {
+    width: 50%;
+}
+.complement {
+    width: 50%;
+}
+.bairro {
+    width: 50%;
+}
+.localidade {
+    width: 50%;
+}
+.uf {
+    width: 50%;
+}
+.openVacancy {
+    width: 50%;
+}
+
+#btnUpdate {
+    width: 50%;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}

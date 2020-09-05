@@ -1,0 +1,161 @@
+<div class="container" ng-controller="checkVacancyCtrl">
+    <div class="row">
+        <div class="topo">
+            <div id="logo">
+                logo
+            </div>
+            <div id="links">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/searchInternship">Procurar Estágios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/account">Conta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ng-click="logout()">Sair</a>
+                    </li>
+                    <div class="user">
+                        {{name}} - {{usertype}}
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="labelsVacancy">
+            <div id="labelArea">
+                Área de atuação:
+            </div>
+            <div id="labelOnde">
+                Onde: 
+            </div>
+
+            <div id="labelPublicado">
+                Publicado:
+            </div>
+            <div id="labelDataInicio">
+                Início:
+            </div>
+
+            <div id="perfilEstagiario">
+                <strong>PERFIL ESTAGIÁRIO:</strong>
+            </div>
+
+            <div id="labelSemestre">
+                Semestre:
+            </div>
+            <div id="labelTi">
+                Informática:
+            </div>
+            <div id="labelSegundoIdioma">
+                Segundo Idioma:
+            </div>
+    
+            <div id="labelEstagiado">
+                Já ter estagiado:
+            </div>
+    
+            <div id="labelBenficios">
+                <strong>BENEFÍCIOS: </strong>
+            </div>
+            
+            <div id="labelBolsa">
+                Bolsa-estágio:
+            </div>
+
+            <div id="labelValeTransporte">
+                Vale-transporte:
+            </div>
+
+            <div id="labelValeRefeicao">
+                Vale-refeição:
+            </div>
+            <div id="labelAtividades">
+                Atividades:
+            </div>
+            <div id="labelEfetivacao">
+                Possibilidade de efetivação:
+            </div>
+            <div id="labelNumeroVagas">
+                Nº vagas:
+            </div>
+            <div id="labelObservacao">
+                Observação:
+            </div>
+        </div>
+
+        <div class="dataVacancy">
+            <div id="labelPerformance">
+                {{vacancyData.performanceArea}}
+            </div>
+            <div id="local">
+                {{vacancyData.neighborhood}} - {{vacancyData.city}}, {{vacancyData.state}}
+            </div>
+            <div id="datapublicacao">
+                {{vacancyData.publishDate}}
+            </div>
+            <div id="dataInicio">
+                {{vacancyData.whenStart}}
+            </div>
+            <div id="">
+                ---
+            </div>
+            <div id="semestre">
+                {{vacancyData.minimumSchooling}}
+            </div>
+            <div id="ti">
+                {{vacancyData.tiKnowledge}}
+            </div>
+            <div id="simOuNao">
+                {{vacancyData.secLan}}, {{vacancyData.secondLanguage}}
+            </div>
+            <!-- <div id="segundoIdioma" ng-if="vacancyData.sl != false">
+                {{vacancyData.secondLanguage}}
+            </div> -->
+            <div id="estagiado">
+                {{vacancyData.alreadyInterned}}
+            </div>
+            <div id="">
+                ---
+            </div>
+            <div id="bolsaEstagio">
+                {{vacancyData.internshipWorth}}
+            </div>
+            <div id="valeTransporte">
+                {{vacancyData.transportationWorth}}
+            </div>
+            <div id="valeRefeicao">
+                {{vacancyData.mealWorth}}
+            </div>
+            <div id="atividades">
+                {{vacancyData.activities}}
+            </div>
+            <div id="efetivacao">
+                {{vacancyData.effectuation}}
+            </div>
+            <div id="numeroVagas">
+                {{vacancyData.numberOfVacancy}}
+            </div>
+            <div id="observacao">
+                {{vacancyData.observation}}
+            </div>
+        </div>
+ 
+        <div id="btnMostrarInteresse">
+            <form>
+                <input type="hidden" name="idvacancy" ng-model="vacancyData.idvacancy" />
+                <input type="hidden" name="email" ng-model="vacancyData.email" />
+                <input type="hidden" name="officeName" ng-model="vacancyData.officeName" />
+                <button class="btn btn-primary btn-block" ng-click="showInterestByVacancy(vacancyData)">CANDIDATAR-SE</button>
+            </form>
+        </div>
+        <div id="msgSuccess">
+            {{msgSuccess}}
+        </div>
+        <div id="btnVoltar">
+            <a class="btn btn-link btn-block" href="#/searchInternship">VOLTAR</a>
+        </div>
+    </div>
+</div>

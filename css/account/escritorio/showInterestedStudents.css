@@ -1,0 +1,38 @@
+.container{
+    background-color: rgb(216, 226, 226);
+    border-radius: 10px;
+}
+
+.labels {
+    /* background-color: lightcoral; */
+    width: 60%;
+    font-weight: bold;
+}
+
+#labelIdvacancy,
+#labelPerformanceArea,
+#labelActivities,
+#labelInternshipWorth,
+#labelPublishDate {
+    display: inline-block;
+}
+
+.data {
+    /* background-color: lightcyan; */
+    width: 60%;
+}
+
+#idvacancy,
+#performanceArea,
+#activities,
+#internshipWorth,
+#publishDate {
+    display: inline-block;
+}
+
+.dataStudentsList {
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-bottom: 20px;
+}
+
