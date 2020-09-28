@@ -7,7 +7,7 @@ app.controller("changePasswordCtrl", ['$scope', '$http', '$location', '$rootScop
 
 	if(location.hostname == 'localhost'){
 		console.log('localhost')
-		var urlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v2/api/register.php';
+		var urlPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/register.php';
 	} else {
 		var urlPrefix = 'api/register.php';
 		console.log('externo')

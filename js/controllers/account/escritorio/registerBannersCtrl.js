@@ -7,8 +7,8 @@ app.controller("registerBannersCtrl", ['$scope', '$http', '$location', '$rootSco
 
 	if(location.hostname == 'localhost'){
 		console.log('localhost')
-        var urlOptionPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/office.php?option=';
-		var uploadFileUrlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/uploadOfficeBanner.php?iduser=';
+        var urlOptionPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/office.php?option=';
+		var uploadFileUrlPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/uploadOfficeBanner.php?iduser=';
 	} else {
         var urlOptionPrefix = 'api/office.php?option=';
 		var uploadFileUrlPrefix = 'api/uploadOfficeBanner.php?iduser=';

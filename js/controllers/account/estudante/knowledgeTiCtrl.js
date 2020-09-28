@@ -7,8 +7,8 @@ app.controller("knowledgeTiCtrl", ['$scope', '$http', '$location', '$rootScope',
 
     if(location.hostname == 'localhost'){
 		console.log('localhost')
-		var urlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/studentSoftwares.php';
-		var urlPrefixOption = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/studentSoftwares.php?option=';
+		var urlPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/studentSoftwares.php';
+		var urlPrefixOption = 'http://localhost:8888/Projects/Web/estagio-direito/api/studentSoftwares.php?option=';
 	} else {
 		var urlPrefix = 'api/register.php';
 		console.log('externo')

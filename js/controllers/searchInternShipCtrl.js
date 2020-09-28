@@ -6,8 +6,8 @@ app.controller("searchInternShipCtrl", ['$scope', '$http', '$location', '$rootSc
 	$scope.email = localStorage.getItem('estagio-direito-email');
 	
 	if(location.hostname == 'localhost'){
-		var urlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/vacancy.php.php';
-		var urlOptionPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/vacancy.php?option=';
+		var urlPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/vacancy.php.php';
+		var urlOptionPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/vacancy.php?option=';
 	} else {
 		var urlPrefix = 'api/vacancy.php';
 		console.log('externo')

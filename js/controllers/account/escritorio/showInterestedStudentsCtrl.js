@@ -8,8 +8,8 @@ app.controller("showInterestedStudentsCtrl", ['$scope', '$http', '$location', '$
     $scope.idvacancy = $routeParams.idvacancy;
 	
 	if(location.hostname == 'localhost'){
-		var urlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/studentVacancy.php.php';
-		var urlOptionPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/studentVacancy.php?option=';
+		var urlPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/studentVacancy.php.php';
+		var urlOptionPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/studentVacancy.php?option=';
 	} else {
 		var urlPrefix = 'api/vacancy.php';
 		console.log('externo')

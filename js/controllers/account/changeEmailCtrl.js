@@ -7,8 +7,8 @@ app.controller("changeEmailCtrl", ['$scope', '$http', '$location', '$rootScope',
 
 	if(location.hostname == 'localhost'){
 		console.log('localhost')
-		var urlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/register.php';
-		var urlOptionPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/register.php?option=';
+		var urlPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/register.php';
+		var urlOptionPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/register.php?option=';
 	} else {
 		var urlPrefix = 'api/register.php';
 		var urlOptionPrefix = 'api/register.php?option=';

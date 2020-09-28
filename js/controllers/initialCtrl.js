@@ -2,7 +2,7 @@ app.controller("initialCtrl", ['$scope', '$http', '$location', '$rootScope', fun
 
 	if(location.hostname == 'localhost'){
 		console.log('localhost')
-		var urlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/register.php';
+		var urlPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/register.php';
 	} else {
 		var urlPrefix = 'api/register.php';
 		console.log('externo')

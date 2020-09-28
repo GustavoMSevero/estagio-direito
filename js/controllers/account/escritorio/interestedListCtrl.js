@@ -7,8 +7,8 @@ app.controller("interestedListCtrl", ['$scope', '$http', '$location', '$rootScop
 
 	if(location.hostname == 'localhost'){
 		console.log('localhost')
-		var urlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/vacancy.php';
-		var urlOptionPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/vacancy.php?option=';
+		var urlPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/vacancy.php';
+		var urlOptionPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/vacancy.php?option=';
 	} else {
 		var urlPrefix = 'api/register.php';
 		console.log('externo')

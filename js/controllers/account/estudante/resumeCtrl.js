@@ -7,9 +7,9 @@ app.controller("resumeCtrl", ['$scope', '$http', '$location', '$rootScope', func
 
 	if(location.hostname == 'localhost'){
 		console.log('localhost')
-		var urlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/student.php';
-		var urlOptionPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/student.php?option=';
-		var uploadFileUrlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/uploadCurriculo.php?iduser=';
+		var urlPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/student.php';
+		var urlOptionPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/student.php?option=';
+		var uploadFileUrlPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/uploadCurriculo.php?iduser=';
 	} else {
 		var urlPrefix = 'api/register.php';
 		console.log('externo')

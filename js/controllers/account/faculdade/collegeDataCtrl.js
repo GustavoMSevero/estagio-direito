@@ -8,8 +8,8 @@ app.controller("collegeDataCtrl", ['$scope', '$http', '$location', '$rootScope',
 
 	if(location.hostname == 'localhost'){
 		console.log('localhost')
-		var urlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/college.php';
-		var urlOptionPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/college.php?option=';
+		var urlPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/college.php';
+		var urlOptionPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/college.php?option=';
 	} else {
 		var urlPrefix = 'api/college.php';
 		var urlOptionPrefix = 'api/college.php?option=';

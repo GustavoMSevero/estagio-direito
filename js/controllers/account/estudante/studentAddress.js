@@ -7,8 +7,8 @@ app.controller("studentAddressCtrl", ['$scope', '$http', '$location', '$rootScop
 
     if(location.hostname == 'localhost'){
 		console.log('localhost')
-		var urlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/student.php';
-		var urlPrefixOption = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/student.php?option=';
+		var urlPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/student.php';
+		var urlPrefixOption = 'http://localhost:8888/Projects/Web/estagio-direito/api/student.php?option=';
 	} else {
 		var urlPrefix = 'api/register.php';
 		console.log('externo')

@@ -9,8 +9,8 @@ app.controller("editCourseCtrl", ['$scope', '$http', '$location', '$routeParams'
 
     if(location.hostname == 'localhost'){
 		console.log('localhost')
-		var urlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/studentCourse.php';
-		var urlPrefixOption = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/studentCourse.php?option=';
+		var urlPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/studentCourse.php';
+		var urlPrefixOption = 'http://localhost:8888/Projects/Web/estagio-direito/api/studentCourse.php?option=';
 	} else {
 		var urlPrefix = 'api/register.php';
 		console.log('externo')

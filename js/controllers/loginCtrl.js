@@ -1,7 +1,7 @@
 app.controller("loginCtrl", ['$scope', '$http', '$location', '$rootScope', function ($scope, $http, $location, $rootScope) {
 
 	if(location.hostname == 'localhost'){
-		var urlOptionRegister = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/register.php';
+		var urlOptionRegister = 'http://localhost:8888/Projects/Web/estagio-direito/api/register.php';
 	} else {
 		var urlPrefix = 'api/vacancy.php';
 		console.log('externo')

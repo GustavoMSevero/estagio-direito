@@ -8,9 +8,9 @@ app.controller("addBannerCtrl", ['$scope', '$http', '$location', '$rootScope', f
 
 	if(location.hostname == 'localhost'){
 		console.log('localhost')
-        var urlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/uploadCollegeBanner.php';
-        var urlOptionPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/college.php?option=';
-		var uploadFileUrlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/uploadCollegeBanner.php?iduser=';
+        var urlPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/uploadCollegeBanner.php';
+        var urlOptionPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/college.php?option=';
+		var uploadFileUrlPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/uploadCollegeBanner.php?iduser=';
 	} else {
         var urlPrefix = 'api/uploadCollegeBanner.php';
         var urlOptionPrefix = 'api/college.php?option=';

@@ -9,9 +9,9 @@ app.controller("checkVacancyCtrl", ['$scope', '$http', '$location', '$routeParam
     // console.log(`idvacancy ${$scope.idvacancy}`)
 	
 	if(location.hostname == 'localhost'){
-		var urlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/vacancy.php';
-		var urlOptionPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/vacancy.php?option=';
-		var urlEmailPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/mail.php';
+		var urlPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/vacancy.php';
+		var urlOptionPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/vacancy.php?option=';
+		var urlEmailPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/mail.php';
 	} else {
 		var urlPrefix = 'api/vacancy.php';
 		console.log('externo')
