@@ -37,7 +37,7 @@
                     </div>
                     
                     <div class="inputs">
-                        <select class="form-control semester" name="semester" ng-model="vacancy.semester" required> 
+                        <select class="form-control searchSemester" name="semester" ng-model="vacancy.semester" required> 
                             <option value="">Selecione...</option>
                             <option value="0">Sem exigência</option>
                             <option value="1º">1º semestre</option>
@@ -52,7 +52,7 @@
                             <option value="10">Último semestre</option>
                         </select>
         
-                        <select class="form-control state" name="state" ng-model="vacancy.state" id="">
+                        <select class="form-control searchState" name="state" ng-model="vacancy.state" id="">
                             <option value="">Selecione...</option>
                             <option value="AC">Acre</option>
                             <option value="AL">Alagoas</option>
@@ -83,7 +83,7 @@
                             <option value="TO">Tocantins</option>
                         </select>
                     
-                        <input class="form-control city" type="text" name="cidade" ng-model="vacancy.city"> 
+                        <input class="form-control searchCity" type="text" name="cidade" ng-model="vacancy.city"> 
         
                         <button class="btn btn-primary" ng-click="searchForVacancy(vacancy)">Buscar</button>
                     </div>

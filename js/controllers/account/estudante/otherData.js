@@ -7,8 +7,8 @@ app.controller("otherDataCtrl", ['$scope', '$http', '$location', '$rootScope', f
 
     if(location.hostname == 'localhost'){
 		console.log('localhost')
-		var urlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v2/api/register.php';
-		var urlPrefixOption = 'http://localhost:8888/Dev/Web/estagio-direito-v2/api/register.php?option=';
+		var urlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/register.php';
+		var urlPrefixOption = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/register.php?option=';
 	} else {
 		var urlPrefix = 'api/register.php';
 		console.log('externo')
@@ -28,7 +28,7 @@ app.controller("otherDataCtrl", ['$scope', '$http', '$location', '$rootScope', f
         user.iduser = $scope.iduser
         // console.log(user)
         $http.put(urlPrefix, user).success(function(response){
-            // console.log(response)
+            console.log(response)
             $scope.msg = response.msg;
         })
     }

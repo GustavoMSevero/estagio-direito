@@ -1,0 +1,14 @@
+.container{
+    background-color: rgb(216, 226, 226);
+    border-radius: 10px;
+}
+
+.universityName,
+.coordinatorName,
+.contactPhone {
+    width: 30%;
+}
+
+.siteCollege {
+    width: 55%;
+}

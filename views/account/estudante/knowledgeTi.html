@@ -1,0 +1,126 @@
+<div class="container" ng-controller="knowledgeTiCtrl">
+    <div class="row">
+        <div class="topo">
+            <div id="logo">
+                logo
+            </div>
+            <div id="links">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/searchInternship">Procurar Estágios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#/account">Conta</a>
+                    </li>
+                    <div class="user">
+                        {{name}} - {{usertype}}
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        
+    </div>
+    
+    <div class="row">
+        <div class="col-12 col-sm-12 col-lg-12">
+            Conhecimentos em informática
+            <!-- <div class="listOfSoftwares">
+
+                <div class="msWord" ng-show="listOfSoftwares.msWordChecked" >
+                    <div id="labelMSWord">
+                        MS Word: 
+                        {{listOfSoftwares.msWord}}
+                    </div>
+                </div>
+
+                <div class="openOfficeWrite">
+                    <div id="labelOpenOfficeWrite" ng-show="listOfSoftwares.openOfficeWriteChecked" >
+                        OpenOffice Write: 
+                        {{listOfSoftwares.openOfficeWrite}}
+                    </div>
+                </div>
+
+                <div class="LibreOfficeWrite">
+                    <div id="labelLibreOfficeWrite" ng-show="listOfSoftwares.libreOfficeWriteChecked" >
+                        LibreOffice Write:
+                        {{listOfSoftwares.libreOfficeWrite}}
+                    </div>
+                </div>
+
+
+
+                <div class="msExcel">
+                    <div id="labelMSWord" ng-show="listOfSoftwares.msExcelChecked" >
+                        MS Excel:
+                        {{listOfSoftwares.msExcel}}
+                    </div>
+                </div>
+
+                <div class="openOfficeCalc">
+                    <div id="labelOpenOfficeCalc" ng-show="listOfSoftwares.openOfficeCalcChecked" >
+                        OpenOffice Calc:
+                        {{listOfSoftwares.openOfficeCalc}}
+                    </div>
+                </div>
+
+                <div class="libreOfficeCalc" >
+                    <div id="labelLibreOfficeCalc" ng-show="listOfSoftwares.libreOfficeCalcChecked" >
+                        LibreOffice Calc:
+                        {{listOfSoftwares.libreOfficeCalc}}
+                    </div>
+                </div>
+
+            </div> -->
+
+            <div class="formTiKnowledge">
+                <form>
+                    <div class="msOffice">
+                        <div>
+                            <input type="checkbox" name="msWord" ng-model="software.msWord" value="msWord" ng-checked="listOfSoftwares.msWordChecked" />
+                            MS Word
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="msExcel" ng-model="software.msExcel" value="msExcel" ng-checked={{msExcelChecked}} >
+                            MS Excel
+                        </div>
+                    </div>
+
+                    <div class="oOffice">
+                        <div>
+                            <input type="checkbox" name="write" ng-model="software.openOfficeWrite" ng-checked="llistOfSoftwares.libreOfficeWriteChecked" >
+                            OpenOffice Write
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="write" ng-model="software.openOfficeCalc" ng-checked="listOfSoftwares.openOfficeCalcChecked" >
+                            OpenOffice Calc
+                        </div>
+                    </div>
+
+                    <div class="lOffice">
+                        <div>
+                            <input type="checkbox" name="write" ng-model="software.libreOfficeWrite" ng-checked={{libreOfficeWriteChecked}} >
+                            LibreOffice Write
+                        </div>
+                        <div>
+                            <input type="checkbox" name="write" ng-model="software.libreOfficeCalc" ng-checked="listOfSoftwares.libreOfficeCalcChecked" >
+                            LibreOffice Calc
+                        </div>
+                    </div>
+
+                    <!-- <div id="msg">
+                        {{msg}}
+                    </div> -->
+
+                    <div id="btnAddTiSoftware">
+                        <button class="btn btn-success btn-block" ng-click="addSoftware(software)">SALVAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

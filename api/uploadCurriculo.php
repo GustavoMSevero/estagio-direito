@@ -32,19 +32,8 @@ try {
     $qryUploadCV->bindValue(5, $local);
     $qryUploadCV->execute();
 
-    $status = 1;
-    //$msg = 'OK';
-
-    $return = array(
-      //'msg' => 
-      'status' => $status
-    );
-
-    echo json_encode($return);
-
 } catch (Exception $e) {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
-
 }
 
 

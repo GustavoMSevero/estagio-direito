@@ -1,4 +1,4 @@
-<div class="container" ng-controller="collegeDataCtrl">
+<div class="container" ng-controller="studentCollegeDataCtrl">
     <div class="row">
         <div class="topo">
             <div id="logo">
@@ -35,6 +35,25 @@
                         <option value="PUCRS">PUCRS</option>
                     </select>
 
+                    <div id="escolaridadeMinima">
+                        Semestre da faculdade
+                      </div>
+            
+                      <select class="form-control universityName" name="semester" ng-model="userStudent.semester">
+                        <option value="">Selecione...</option>
+                        <option value="0">Sem exigência</option>
+                        <option value="1º semestre">1º semestre</option>
+                        <option value="2º semestre">2º semestre</option>
+                        <option value="3º semestre">3º semestre</option>
+                        <option value="4º semestre">4º semestre</option>
+                        <option value="5º semestre">5º semestre</option>
+                        <option value="6º semestre">6º semestre</option>
+                        <option value="7º semestre">7º semestre</option>
+                        <option value="8º semestre">8º semestre</option>
+                        <option value="9º semestre">9º semestre</option>
+                        <option value="10 semestre">Último semestre</option>
+                      </select>
+
                     <div id="labelAnoInicio">
                         Ano início
                     </div>
@@ -43,12 +62,17 @@
                         Ano conclusão
                     </div>
                     <input class="form-control conclusionYear" type="text" name="conclusionYear" ng-model="userStudent.conclusionYear">
-                    <div id="labelOABNumCar">
+                    <!-- <div id="labelOABNumCar">
                         OAB
                     </div>
-                    <input class="form-control OABNumberCard" type="text" name="OABNumberCard" ng-model="userStudent.OABNumberCard">
+                    <input class="form-control OABNumberCard" type="text" name="OABNumberCard" ng-model="userStudent.OABNumberCard"> -->
+
                     <div id="btnUpdateCollegeData">
                         <button class="btn btn-success btn-block" ng-click="updateStudentData(userStudent)">ATUALIZAR</button>
+                    </div>
+
+                    <div>
+                        {{msg}}
                     </div>
                 </form>
             </div>

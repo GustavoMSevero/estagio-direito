@@ -36,16 +36,17 @@
                             <td width="150"><b>Estudante</b></td>
                             <td width="150"><b>Universidade</b></td>
                             <td width="150"><b>Semestre</b></td>
-                            <td width="150"><b>Localidade</b></td>
+                            <td width="250"><b>Localidade</b></td>
                             <td width="150"></td>
                         </thead>
-                        <!-- <tr ng-repeat="lv in listVacancies">
-                            <td>{{lv.performanceArea}}</td>
-                            <td>{{lv.activities}}</td>
-                            <td align="right">{{lv.internshipWorth}}</td>
-                            <td align="right">{{lv.publishDate}}</td>
-                            <td align="right"><a href="#/showInterestedStudents/{{lv.idvacancy}}">Interessados</a></td>
-                        </tr> -->
+    
+                        <tr ng-repeat="lois in listOfInteretedStudents">
+                            <td>{{lois.name}}</td>
+                            <td>{{lois.universityName}}</td>
+                            <td align="center">{{lois.semester}}</td>
+                            <td align="left">{{lois.logradouro}} - {{lois.bairro}}</td>
+                            <td align="right"><a href="#/showStudentResume/{{lois.idstudent}}">ver</a></td>
+                        </tr>
                     </table>
                 </div>
 

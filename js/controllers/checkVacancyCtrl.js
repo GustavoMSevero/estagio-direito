@@ -24,7 +24,12 @@ app.controller("checkVacancyCtrl", ['$scope', '$http', '$location', '$routeParam
         $scope.office = 1;
     } else {
         $scope.college = 1;
-	}
+    }
+    
+    $scope.logout =function() {
+        localStorage.clear();
+        $location.path('/');
+    }
 	
     var getInfoVacancy = function() {
         var option = 'get info vacancy';

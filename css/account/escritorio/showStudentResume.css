@@ -1,0 +1,222 @@
+.container{
+    background-color: rgb(216, 226, 226);
+    border-radius: 10px;
+}
+
+#curriculoVitae {
+    color: darkgreen;
+    margin-top: 10px;
+    margin-left: 10%;
+    margin-bottom: 5px;
+}
+
+.allData {
+    margin-left: 10%;
+    background-color: white;
+    border-radius: 10px;
+    width: 85%;
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-bottom: 2%;
+    margin-bottom: 4%;
+}
+
+#tituloNome, #nome {
+    display: inline-block;
+}
+
+#tituloNome {
+    color: green;
+}
+
+#nome {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+#tituloDataNascimento, #dataNascimento {
+    display: inline-block;
+}
+
+#tituloDataNascimento {
+    color: cadetblue;
+    /* background-color: cornflowerblue; */
+    width: 15%;
+}
+
+#dataNascimento {
+    /* background-color: chartreuse; */
+    width: 10%;
+}
+
+#tituloSexo, #sexo {
+    display: inline-block;
+}
+
+#tituloSexo {
+    color: cadetblue;
+    width: 5%;
+}
+
+#sexo {
+    width: 8%;
+}
+
+#tituloEmail, #email {
+    display: inline-block;
+}
+
+#tituloEmail {
+    color: cadetblue;
+    width: 6%;
+}
+
+#email {
+    width: 17%;
+    /* background-color: cornflowerblue; */
+}
+
+#tituloTelefone, #telefone {
+    display: inline-block;
+}
+
+#tituloTelefone {
+    color: cadetblue;
+    width: 8%;
+}
+
+#tlefone {
+    width: 16%;
+}
+
+#tituloCelular, #celular {
+    display: inline-block;
+}
+
+#tituloCelular {
+    color: cadetblue;
+    width: 7%;
+}
+
+#celular {
+    width: 40%;
+    /* background-color: cornflowerblue; */
+}
+
+#tituloIdade, #idade {
+    display: inline-block;
+}
+
+#tituloIdade {
+    color: cadetblue;
+    width: 6%;
+}
+
+#idade {
+    width: 4%;
+    /* background-color: cornflowerblue; */
+}
+
+#labeCity, #cityState, #labelNeighbothood {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+#labeCity {
+    color: cadetblue;
+}
+
+#cityState {
+    width: 35%;
+    margin-bottom: 10px;
+}
+
+#labelNeighbothood, #neighbothood {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+#labelNeighbothood {
+    color: cadetblue;
+    margin-bottom: 10px;
+}
+
+
+#tituloEstadoCivil, #estadoCivil {
+    display: inline-block;
+}
+
+#tituloEstadoCivil {
+    color: cadetblue;
+    width: 11%;
+}
+
+#estadoCivil {
+    width: 5%;
+    /* background-color: cornflowerblue; */
+    margin-bottom: 10px;
+}
+
+#labelCursos {
+    color: cadetblue;
+}
+
+#labelIngles, #ingles {
+    display: inline-block;
+}
+
+#labelIngles {
+    color: cadetblue;
+}
+
+#ingles {
+    width: 15%;
+}
+
+#labelEspanhol, #espanhol {
+    display: inline-block;
+}
+
+#labelEspanhol {
+    color: cadetblue;
+}
+
+.goals {
+    margin-top: 10px;
+}
+
+#labelGoals {
+    color: cadetblue;
+}
+
+#btnPrint {
+    text-align: center;
+}
+
+
+
+
+#tituloFormacaoAcademica,
+#formacaoAcademica {
+    display: inline-block;
+}
+
+#tituloFormacaoAcademica {
+    color: cadetblue;
+}
+
+#labelOABCard,
+#OABCard {
+    display: inline-block;
+}
+
+#labelOABCard {
+    color: cadetblue;
+}
+
+#cursos {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+

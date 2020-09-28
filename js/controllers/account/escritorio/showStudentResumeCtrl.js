@@ -1,11 +1,12 @@
-app.controller("showInterestedStudentsCtrl", ['$scope', '$http', '$location', '$routeParams', function ($scope, $http, $location, $routeParams) {
+app.controller("showStudentResumeCtrl", ['$scope', '$http', '$location', '$routeParams', function ($scope, $http, $location, $routeParams) {
 
 	$scope.name = localStorage.getItem('estagio-direito-username');
     $scope.iduser = localStorage.getItem('estagio-direito-iduser');
 	$scope.usertype = localStorage.getItem('estagio-direito-usertype');
     $scope.email = localStorage.getItem('estagio-direito-email');
     
-    $scope.idvacancy = $routeParams.idvacancy;
+    $scope.idstudent = $routeParams.idstudent;
+    // console.log('idstudent '+$scope.idstudent)
 	
 	if(location.hostname == 'localhost'){
 		var urlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/studentVacancy.php.php';
@@ -23,16 +24,15 @@ app.controller("showInterestedStudentsCtrl", ['$scope', '$http', '$location', '$
     } else {
         $scope.college = 1;
 	}
-
-    var getStudentByVacancyInterested = function() {
-        var option = 'get student by vacancy interested';
-        $http.get(urlOptionPrefix + option + '&idvacancy=' + $scope.idvacancy).success(function(response) {
+    
+    var studentResumeData = function() {
+        var option = 'student resume data';
+        $http.get(urlOptionPrefix + option + '&idstudent=' + $scope.idstudent).success(function(response) {
             // console.log(response)
-            $scope.listOfInteretedStudents = response;
+            $scope.resumeData = response;
         })
 
     }
-    getStudentByVacancyInterested();
-    
+    studentResumeData();
 	
 }]);

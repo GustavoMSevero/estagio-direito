@@ -1,17 +1,20 @@
-app.controller("cadastrarBannersEscritorioCtrl", ['$scope', '$http', '$location', '$rootScope', function ($scope, $http, $location, $rootScope, viaCep) {
+app.controller("addBannerCtrl", ['$scope', '$http', '$location', '$rootScope', function ($scope, $http, $location, $rootScope, viaCep) {
 
-	$scope.name = localStorage.getItem('estagio_direito_user_name');
-	$scope.iduser = localStorage.getItem('estagio_direito_iduser');
-    $scope.type = localStorage.getItem('estagio_direito_user_type');
+	$scope.name = localStorage.getItem('estagio-direito-username');
+    $scope.iduser = localStorage.getItem('estagio-direito-iduser');
+	$scope.usertype = localStorage.getItem('estagio-direito-usertype');
+	$scope.email = localStorage.getItem('estagio-direito-email');
     //console.log(`iduser $scope.iduser`)
 
 	if(location.hostname == 'localhost'){
 		console.log('localhost')
-        var urlOptionPrefix = 'http://localhost:8888/sistemas/Webapps/Projetos/estagio-direito/api/office.php?option=';
-		var uploadFileUrlPrefix = 'http://localhost:8888/sistemas/Webapps/Projetos/estagio-direito/api/uploadOfficeBanner.php?iduser=';
+        var urlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/uploadCollegeBanner.php';
+        var urlOptionPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/college.php?option=';
+		var uploadFileUrlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/uploadCollegeBanner.php?iduser=';
 	} else {
-        var urlOptionPrefix = 'api/office.php?option=';
-		var uploadFileUrlPrefix = 'api/uploadOfficeBanner.php?iduser=';
+        var urlPrefix = 'api/uploadCollegeBanner.php';
+        var urlOptionPrefix = 'api/college.php?option=';
+		var uploadFileUrlPrefix = 'api/uploadCollegeBanner.php?iduser=';
 		console.log('externo')
     }
 
@@ -38,6 +41,7 @@ app.controller("cadastrarBannersEscritorioCtrl", ['$scope', '$http', '$location'
 			.then(function(response) {
                 console.log(response);
                 showBanner();
+  
 		}, function errorCallback(response) {
 			console.log("Error "+response);
 		});

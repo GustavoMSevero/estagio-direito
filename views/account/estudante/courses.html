@@ -1,0 +1,105 @@
+<div class="container" ng-controller="coursesCtrl">
+    <div class="row">
+        <div class="topo">
+            <div id="logo">
+                logo
+            </div>
+            <div id="links">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/searchInternship">Procurar Estágios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#/account">Conta</a>
+                    </li>
+                    <div class="user">
+                        {{name}} - {{usertype}}
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        
+    </div>
+    
+    <div class="row">
+        <div class="col-12 col-sm-12 col-lg-12">
+
+            <div class="formCourses">
+                <form>
+                    <label for="">Curso concluído</label>
+                    <div>
+                        <input class="form-control courseName" type="text" name="course" ng-model="course.courseName">
+                    </div>
+                    <label for="">Escola/Instituição</label>
+                    <div>
+                        <input class="form-control schoolInstitution" type="text" name="schoolInstitution" ng-model="course.schoolInstitution">
+                    </div>
+                    <label for="">Cidade</label>
+                    <div>
+                        <input class="form-control city" type="text" name="city" ng-model="course.city" placeholder="São Paulo">
+                    </div>
+                    <label for="">Estado</label>
+                    <div>
+                        <input class="form-control state" type="text" name="state" ng-model="course.state" placeholder="SP">
+                    </div>
+                    <label for="">Carga horária</label>
+                    <div>
+                        <input class="form-control workload" type="text" name="workload" ng-model="course.workload" placeholder="40 horas">
+                    </div>
+                    <label for="">Curso presencial, on-line ou ambos</label>
+                    <div>
+                        <select class="form-control typeOfCourse" name="typeOfCourse" ng-model="course.typeOfCourse">
+                            <option value="">Selecione o tipo</option>
+                            <option value="Presencial">Presencial</option>
+                            <option value="On-line">On-line</option>
+                            <option value="Ambos">Ambos</option>
+                        </select>
+                    </div>
+                    <label for="">Conclusão</label>
+                    <div>
+                        <input class="form-control mouthYearConclusion" type="text" name="mouthYearConclusion" ng-model="course.mouthYearConclusion" placeholder="03/2020">
+                    </div>
+                    
+                    <div id="btnAddCourse">
+                        <button class="btn btn-success btn-block" ng-click="addStudentCourse(course)">ADICIONAR CURSO</button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-12 col-lg-12">
+            
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome do curso</th>
+                    <th scope="col">Escola/Instituição</th>
+                    <th scope="col">Cidade/Estado</th>
+                    <th scope="col">Carga horária</th>
+                    <th scope="col">Tipo de curso</th>
+                    <th scope="col">Conclusão</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="lc in listCourses">
+                    <th scope="row">{{lc.idcourse}}</th>
+                    <td>{{lc.courseName}}</td>
+                    <td>{{lc.school_Institution}}</td>
+                    <td>{{lc.city}}/{{lc.state}}</td>
+                    <td>{{lc.workload}}</td>
+                    <td>{{lc.typeOfCourse}}</td>
+                    <td>{{lc.monthYearConclusion}}</td>
+                    <td><a href="#editCourse/{{lc.idcourse}}">editar</a></td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

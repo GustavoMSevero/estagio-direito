@@ -3,18 +3,16 @@
     border-radius: 10px;
 }
 
-.titulo{
-    text-align: center;
-    padding-top: 20px;
-    margin-bottom: 20px;
-}
-
 .uploadBanner{
+    margin-top: 20px;
     margin-left: 40%;
     margin-bottom: 20px;
 }
 
 .exibeBanner{
+    justify-content: center;
+    align-content: center;
+    align-items: center;
     margin-left: 5%;
     margin-bottom: 20px;
 }

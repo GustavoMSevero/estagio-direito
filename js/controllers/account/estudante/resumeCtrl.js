@@ -7,13 +7,35 @@ app.controller("resumeCtrl", ['$scope', '$http', '$location', '$rootScope', func
 
 	if(location.hostname == 'localhost'){
 		console.log('localhost')
-		var urlPrefix = 'http://localhost:8888/sistemas/Webapps/Projetos/estagio-direito/api/student.php';
-		var urlOptionPrefix = 'http://localhost:8888/sistemas/Webapps/Projetos/estagio-direito/api/student.php?option=';
-		var uploadFileUrlPrefix = 'http://localhost:8888/sistemas/Webapps/Projetos/estagio-direito/api/uploadCurriculo.php?iduser=';
+		var urlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/student.php';
+		var urlOptionPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/student.php?option=';
+		var uploadFileUrlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/uploadCurriculo.php?iduser=';
 	} else {
 		var urlPrefix = 'api/register.php';
 		console.log('externo')
-    }
+	}
+	
+	// Firsts data os resume
+	var getStudentResumeData = function() {
+		var option = 'get student resume data';
+		$http.get(urlOptionPrefix + option + '&idstudent=' +$scope.iduser).success(function(data) {
+			// console.log(data)
+			data.email = $scope.email;
+			$scope.studentResumeData = data;
+		})
+	}
+	getStudentResumeData();
+
+	$scope.saveResume = function(resumeStudent) {
+		resumeStudent.option = 'save resume student data';
+		resumeStudent.iduser = $scope.iduser;
+		// console.log(resumeStudent)
+		$http.post(urlPrefix, resumeStudent).success(function(data) {
+			getStudentResumeData();
+			$scope.msg = data.msg;
+			
+		})
+	}
 
 
 	var formData = new FormData();
@@ -38,9 +60,7 @@ app.controller("resumeCtrl", ['$scope', '$http', '$location', '$rootScope', func
 			})
 			.then(function(response) {
 				console.log(response);
-				// var res = JSON.parse(response)
-				// $scope.msg = res.msg;
-				// alert(res.msg)
+				showResume();
 		}, function errorCallback(response) {
 			console.log("Error "+response);
 		});
@@ -49,13 +69,14 @@ app.controller("resumeCtrl", ['$scope', '$http', '$location', '$rootScope', func
 	var showResume = function(){
 		var option = 'show resume';
 		$http.get(urlOptionPrefix + option + '&iduser=' + $scope.iduser).success(function(response){
-			//console.log(response)
+			// console.log(response)
 			$scope.resumeName = response.resumeName;
 			$scope.resumeView = response.resumeView;
 			$scope.idresume = response.idresume;
 		})
 	}
 	showResume();
+	
 
 
 	

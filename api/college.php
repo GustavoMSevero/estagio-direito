@@ -52,6 +52,46 @@ switch ($option) {
         
         break;
 
+    case 'update college data':
+        // var_dump($data);
+
+        $idcollege=$data->idcollege;
+        $collegeName=$data->collegeName;
+        $contactPhone=$data->contactPhone;
+        $coordinatorName=$data->coordinatorName;
+        $siteCollege=$data->siteCollege;
+        $iduser=$data->iduser;
+        
+        try {
+
+            $updateCollegeData=$pdo->prepare("UPDATE college SET collegeName=:collegeName, contactPhone=:contactPhone, 
+                                            coordinatorName=:coordinatorName, siteCollege=:siteCollege
+                                            WHERE iduser=:iduser 
+                                            AND idcollege=:idcollege");
+            $updateCollegeData->bindValue(":collegeName", $collegeName);
+            $updateCollegeData->bindValue(":contactPhone", $contactPhone);
+            $updateCollegeData->bindValue(":coordinatorName", $coordinatorName);
+            $updateCollegeData->bindValue(":siteCollege", $siteCollege);
+            $updateCollegeData->bindValue(":iduser", $iduser);
+            $updateCollegeData->bindValue(":idcollege", $idcollege);
+            $updateCollegeData->execute();
+
+            $msg = 'Dados da faculdade atualizados com sucesso!';
+            $status = 1;
+
+            $return = array(
+                'status' => $status,
+                'msg' => $msg
+            );
+       
+            echo json_encode($return);
+
+        } catch (Exception $e) {
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
+
+        break;
+
     case 'show banner':
 
         $iduser = $_GET['iduser'];

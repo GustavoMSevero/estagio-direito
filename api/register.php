@@ -19,7 +19,7 @@ if($data){
 
 switch ($option) {
 	case "register user":
-        //print_r($data);
+        // print_r($data);
         $type = $data->type;
 		
 		try {
@@ -68,6 +68,7 @@ switch ($option) {
                 $return = array(
                     'iduser' => $iduser,
                     'name' => $nameOffice,
+                    'email' => $email,
                     'type' => $type
                 );
 
@@ -81,15 +82,16 @@ switch ($option) {
                 $password = md5($data->password);
 
                 $name = $data->fullname;
-                $age = $data->studantAge;
+                $dateBirthday = $data->studantDateBirthday;
                 $sex = $data->sex;
                 $universityName = $data->universityName;
+                $semester = $data->semester;
                 @$startYear = $data->startYear;
                 $conclusionYear = $data->conclusionYear;
                 @$OABNumberCard = $data->OABNumberCard;
 
-                $ageP = explode('T', $age);
-                $age = $ageP[0];
+                $dateBirthdayP = explode('T', $dateBirthday);
+                $dateBirthday = $dateBirthdayP[0];
 
                 $registerUser=$pdo->prepare("INSERT INTO user (iduser, usertype, email, userpassword) VALUES (?,?,?,?)");
                 $registerUser->bindValue(1, NULL);
@@ -100,22 +102,24 @@ switch ($option) {
 
                 $iduser = $pdo->lastInsertId();
 
-                $registerStudant=$pdo->prepare("INSERT INTO student (idstudent, iduser, name, age, sex, universityName, startYear, conclusionYear, OABNumberCard) 
-                                                VALUES (?,?,?,?,?,?,?,?,?)");
+                $registerStudant=$pdo->prepare("INSERT INTO student (idstudent, iduser, name, dateBirthday, sex, universityName, semester, startYear, conclusionYear, OABNumberCard) 
+                                                VALUES (?,?,?,?,?,?,?,?,?,?)");
                 $registerStudant->bindValue(1, NULL);
                 $registerStudant->bindValue(2, $iduser);
                 $registerStudant->bindValue(3, $name);
-                $registerStudant->bindValue(4, $age);
+                $registerStudant->bindValue(4, $dateBirthday);
                 $registerStudant->bindValue(5, $sex);
                 $registerStudant->bindValue(6, $universityName);
-                $registerStudant->bindValue(7, $startYear);
-                $registerStudant->bindValue(8, $conclusionYear);
-                $registerStudant->bindValue(9, $OABNumberCard);
+                $registerStudant->bindValue(7, $semester);
+                $registerStudant->bindValue(8, $startYear);
+                $registerStudant->bindValue(9, $conclusionYear);
+                $registerStudant->bindValue(10, $OABNumberCard);
                 $registerStudant->execute();
 
                 $return = array(
                     'iduser' => $iduser,
                     'name' => $name,
+                    'email' => $email,
                     'type' => $type
                 );
 
@@ -155,6 +159,7 @@ switch ($option) {
                 $return = array(
                     'iduser' => $iduser,
                     'name' => $collegeName,
+                    'email' => $email,
                     'type' => $type
                 );
 
@@ -474,7 +479,92 @@ switch ($option) {
         }
 
 
-        break;  
+        break;
+
+    case "get other data student to change":
+
+        $iduser = $_GET['iduser'];
+    
+        try {
+            
+            $getOtherDataStudent=$pdo->prepare("SELECT * FROM student WHERE iduser=:iduser");
+            $getOtherDataStudent->bindValue(":iduser", $iduser);
+            $getOtherDataStudent->execute();
+
+            while ($linha=$getOtherDataStudent->fetch(PDO::FETCH_ASSOC)) {
+
+                $name = $linha['name'];
+                $dateBirthday = $linha['dateBirthday'];
+                $sex = $linha['sex'];
+                $phone = $linha['phone'];
+                $mobilephone = $linha['mobilephone'];
+
+                $dateBirthdayP = explode('-', $dateBirthday);
+                $dateBirthday = $dateBirthdayP[2].'/'.$dateBirthdayP[1].'/'.$dateBirthdayP[0];
+
+                if($sex == 'M'){
+                    $sex = 'Masculino';
+                } else {
+                    $sex = 'Feminino';
+                }
+    
+                $return = array(
+                    'name'	=> $name,
+                    'dateBirthday'	=> $dateBirthday,
+                    'sex'	=> $sex,
+                    'phone'	=> $phone,
+                    'mobilephone' => $mobilephone
+                );
+    
+            }
+    
+            echo json_encode($return);
+
+        } catch (Exception $e) {
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
+
+        break;
+
+    case "update other data student to change":
+        // print_r($data);
+        $dateBirthday = $data->dateBirthday;
+        $iduser = $data->iduser;
+        $phone = $data->phone;
+        $mobilephone = $data->mobilephone;
+
+        $dateBirthdayP = explode('/', $dateBirthday);
+        $dateBirthday = $dateBirthdayP[2].'-'.$dateBirthdayP[1].'-'.$dateBirthdayP[0];
+
+        // echo $dateBirthday;
+    
+        try {
+            
+            $updateOtherDataStudent=$pdo->prepare("UPDATE student 
+                                                    SET dateBirthday=:dateBirthday, phone=:phone, mobilephone=:mobilephone
+                                                    WHERE iduser=:iduser");
+            $updateOtherDataStudent->bindValue(":dateBirthday", $dateBirthday);
+            $updateOtherDataStudent->bindValue(":phone", $phone);
+            $updateOtherDataStudent->bindValue(":mobilephone", $mobilephone);
+            $updateOtherDataStudent->bindValue(":iduser", $iduser);
+            $updateOtherDataStudent->execute();
+    
+            $status = 1;
+            $msg = 'Dados atualizados com sucesso';
+
+            $return = array(
+                'status'	=> $status,
+                'msg' => $msg
+            );
+    
+            echo json_encode($return);
+
+        } catch (Exception $e) {
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
+
+
+        break;
 
 	case 'mostrar foto':
 

@@ -35,15 +35,27 @@ app.config(['$routeProvider', function($routeProvider){
     })
 
     .when("/otherData", {
-        templateUrl: "views/account/otherData.html",
+        templateUrl: "views/account/estudante/otherData.html",
     })
 
-    .when("/collegeData", {
-        templateUrl: "views/account/estudante/collegeData.html",
+    .when("/studentCollegeData", {
+        templateUrl: "views/account/estudante/studentCollegeData.html",
     })
 
     .when("/studentAddress", {
         templateUrl: "views/account/estudante/studentAddress.html",
+    })
+
+    .when("/courses", {
+        templateUrl: "views/account/estudante/courses.html",
+    })
+
+    .when("/editCourse/:idcourse", {
+        templateUrl: "views/account/estudante/editCourse.html",
+    })
+
+    .when("/knowledgeTi", {
+        templateUrl: "views/account/estudante/knowledgeTi.html",
     })
 
     .when("/resume", {
@@ -70,13 +82,23 @@ app.config(['$routeProvider', function($routeProvider){
         templateUrl: "views/account/escritorio/showInterestedStudents.html",
     })
 
+    .when("/showStudentResume/:idstudent", {
+        templateUrl: "views/account/escritorio/showStudentResume.html",
+    })
+
     .when("/registerBanners", {
         templateUrl: "views/account/escritorio/registerBanners.html",
     })
 
-    // .when("/editarVaga/:idvacancy", {
-    //     templateUrl: "views/conta/escritorio/editarVaga.html",
-    // })
+    .when("/collegeData", {
+        templateUrl: "views/account/faculdade/collegeData.html",
+    })
+
+    .when("/addBanner", {
+        templateUrl: "views/account/faculdade/addBanner.html",
+    })
+
+
 
     // .when("/telaLogin", {
     //     templateUrl: "views/telaLogin.html",
@@ -104,10 +126,6 @@ app.config(['$routeProvider', function($routeProvider){
 
     // .when("/dadosFaculdade", {
     //     templateUrl: "views/conta/faculdade/dadosFaculdade.html",
-    // })
-
-    // .when("/cadastrarBanners", {
-    //     templateUrl: "views/conta/faculdade/cadastrarBanners.html",
     // })
 
     // .when("/cadastrarBanners", {

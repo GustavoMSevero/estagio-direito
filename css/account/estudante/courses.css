@@ -1,0 +1,24 @@
+.container{
+    background-color: rgb(216, 226, 226);
+    border-radius: 10px;
+}
+
+.formCourses {
+    margin-bottom: 20px;
+    margin-left: 35%;
+}
+
+.courseName,
+.schoolInstitution,
+.city,
+.state,
+.workload,
+.typeOfCourse,
+.mouthYearConclusion {
+    width: 40%;
+}
+
+#btnAddCourse {
+    margin-top: 20px;
+    width: 40%;
+}

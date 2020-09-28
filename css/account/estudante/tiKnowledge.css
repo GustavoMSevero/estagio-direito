@@ -1,0 +1,80 @@
+.container{
+    background-color: rgb(216, 226, 226);
+    border-radius: 10px;
+}
+
+.formTiKnowledge {
+    margin-top: 20px;
+    margin-left: 20%;
+}
+
+.msOffice,
+.oOffice,
+.lOffice {
+    display: inline-block;
+}
+
+.msOffice {
+    width: 20%;
+}
+
+.oOffice {
+    width: 25%;
+}
+
+#btnAddTiSoftware {
+    margin-left: 20%;
+    margin-top: 20px;
+    width: 20%;
+}
+
+#msg {
+    margin-top: 10px;
+    margin-left: 17%;
+    color: blue;
+}
+
+.listOfSoftwares {
+    width: 50%;
+    margin-left: 21%;
+    /* background-color: darkkhaki; */
+}
+
+.msWord,
+.openOfficeWrite,
+.LibreOfficeWrite {
+    display: inline-block;
+}
+
+.msExcel,
+.openOfficeCalc,
+.libreOfficeCalc {
+    display: inline-block;
+}
+
+.msWord {
+    /* background-color: cyan; */
+    width: 30%;
+}
+
+.openOfficeWrite {
+    /* background-color: darkcyan; */
+    width: 35%;
+}
+
+.LibreOfficeWrite {
+    /* background-color: darkgray; */
+    width: 30%;
+}
+
+
+
+.msExcel {
+    /* background-color: darksalmon; */
+    width: 30%;
+}
+
+.openOfficeCalc {
+    /* background-color: deepskyblue; */
+    width: 35%;
+}

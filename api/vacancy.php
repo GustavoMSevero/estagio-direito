@@ -7,13 +7,6 @@ include_once("con.php");
 
 $pdo = conectar();
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
-
 $data = file_get_contents("php://input");
 $data = json_decode($data);
 
@@ -586,11 +579,12 @@ switch ($option) {
 
             // } else {
 
-                $saveInterestedInVacancy=$pdo->prepare("INSERT INTO studentsVacancies (idstudentVacancy, idstudent, idvacancy) 
-                                                    VALUES(?,?,?)");
+                $saveInterestedInVacancy=$pdo->prepare("INSERT INTO studentsVacancies (idstudentVacancy, idoffice, idstudent, idvacancy) 
+                                                    VALUES(?,?,?,?)");
                 $saveInterestedInVacancy->bindValue(1, NULL);
-                $saveInterestedInVacancy->bindValue(2, $idstudent);
-                $saveInterestedInVacancy->bindValue(3, $idvacancy);
+                $saveInterestedInVacancy->bindValue(2, $iduser);
+                $saveInterestedInVacancy->bindValue(3, $idstudent);
+                $saveInterestedInVacancy->bindValue(4, $idvacancy);
                 $saveInterestedInVacancy->execute();
 
                 $idvacancy = $data->idvacancy;

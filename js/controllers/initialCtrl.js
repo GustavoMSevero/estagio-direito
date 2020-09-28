@@ -2,7 +2,7 @@ app.controller("initialCtrl", ['$scope', '$http', '$location', '$rootScope', fun
 
 	if(location.hostname == 'localhost'){
 		console.log('localhost')
-		var urlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v2/api/register.php';
+		var urlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/register.php';
 	} else {
 		var urlPrefix = 'api/register.php';
 		console.log('externo')
@@ -39,7 +39,9 @@ app.controller("initialCtrl", ['$scope', '$http', '$location', '$rootScope', fun
     $scope.register = function(user){
         user.option = 'register user';
         user.type = $rootScope.type;
+        // console.log(user)
         $http.post(urlPrefix, user).success(function(response){
+            // console.log(response);
             localStorage.setItem('estagio-direito-iduser', response.iduser);
             localStorage.setItem('estagio-direito-username', response.name);
             localStorage.setItem('estagio-direito-usertype', response.type);

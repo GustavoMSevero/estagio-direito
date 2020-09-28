@@ -1,4 +1,4 @@
-app.controller("collegeDataCtrl", ['$scope', '$http', '$location', '$rootScope', function ($scope, $http, $location, $rootScope, viaCep) {
+app.controller("studentCollegeDataCtrl", ['$scope', '$http', '$location', '$rootScope', function ($scope, $http, $location, $rootScope, viaCep) {
 
 	$scope.name = localStorage.getItem('estagio-direito-username');
     $scope.iduser = localStorage.getItem('estagio-direito-iduser');
@@ -7,7 +7,6 @@ app.controller("collegeDataCtrl", ['$scope', '$http', '$location', '$rootScope',
 
 	if(location.hostname == 'localhost'){
 		console.log('localhost')
-		//var urlPrefix = 'http://localhost:8888/sistemas/Webapps/Projetos/estagio-direito/api/register.php';
 		var urlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/student.php';
 		var urlOptionPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/student.php?option=';
 	} else {
@@ -23,6 +22,16 @@ app.controller("collegeDataCtrl", ['$scope', '$http', '$location', '$rootScope',
             $scope.userStudent = response;
         })
     }
-    getCollegeData();
+	getCollegeData();
+	
+	$scope.updateStudentData = function(userStudent) {
+		userStudent.option = 'update student college data';
+		userStudent.iduser = $scope.iduser;
+		// console.log(userStudent)
+		$http.put(urlOptionPrefix, userStudent).success(function(data) {
+			// console.log(data.msg)
+			$scope.msg = data.msg
+		})
+	}
 	
 }]);

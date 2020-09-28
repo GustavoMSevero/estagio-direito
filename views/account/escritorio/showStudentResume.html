@@ -1,0 +1,171 @@
+<div class="container" ng-controller="showStudentResumeCtrl">
+    <div class="row">
+        <div class="topo">
+            <div id="logo">
+                logo
+            </div>
+            <div id="links">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/searchInternship">Procurar Estágios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#/account">Conta</a>
+                    </li>
+                    <div class="user">
+                        {{name}} - {{usertype}}
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        
+    </div>
+    
+    <div class="row">
+        <div class="col-12 col-sm-12 col-lg-12">
+            <div id="curriculoVitae">
+                Curriculum Vitae
+            </div>
+            <div class="allData">
+                <div>
+                    <div id="tituloNome">
+                        Nome:
+                    </div>
+                    <div id="nome">
+                        {{resumeData.studentName}}
+                    </div>
+                </div>
+
+                <div class="dataSexoEmailTel">
+                    <div>
+                        <div id="tituloDataNascimento">
+                            Data nascimento:
+                        </div>
+                        <div id="dataNascimento">
+                            {{resumeData.dateBirthday}}
+                        </div>
+
+                        <div id="tituloSexo">
+                            Sexo:
+                        </div>
+                        <div id="sexo">
+                            {{resumeData.sex}}
+                        </div>
+                    </div>
+
+                    <div>
+                        <div id="tituloEmail">
+                            E-mail:
+                        </div>
+                        <div id="email">
+                            {{resumeData.email}}
+                        </div>
+                    </div>
+                    <div>
+                        <div id="tituloTelefone">
+                            Telefone:
+                        </div>
+                        <div id="telefone">
+                            {{resumeData.phone}}
+                        </div>
+                        <div id="tituloCelular">
+                            Celular:
+                        </div>
+                        <div id="celular">
+                            {{resumeData.mobilephone}}
+                        </div>
+                    </div>
+
+                    <div>
+                        <div id="tituloIdade">
+                            Idade:
+                        </div>
+                        <div id="idade">
+                            {{resumeData.age}}
+                        </div>
+                        <div id="tituloEstadoCivil">
+                            Estado Civil:
+                        </div>
+                        <div id="estadoCivil">
+                            {{resumeData.maritalStatus}}
+                        </div>
+                    </div>
+
+                    <div>
+                        <div id="labeCity">
+                            Cidade:
+                        </div>
+                        <div id="cityState">
+                            {{resumeData.city}} - {{resumeData.state}}
+                        </div>
+                        <div id="labelNeighbothood">
+                            Bairro:
+                        </div>
+                        <div id="neighbothood">
+                            {{resumeData.neighborhood}}
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div>
+                    <div id="tituloFormacaoAcademica">
+                        Formação Acadêmica:
+                    </div>
+                    <div id="formacaoAcademica">
+                        Direito - {{resumeData.university}}
+                    </div>
+                </div>
+
+                <div>
+                    <div id="labelOABCard">
+                        Carteira OAB: 
+                    </div>
+                    <div id="OABCard">
+                        {{resumeData.OABCard}}
+                    </div>
+                </div>
+
+                <div>
+                    <div id="labelCursos">
+                        Cursos:
+                    </div>
+                </div>
+
+                <div class="Idiomas">
+                    <div id="labelIngles">
+                        Inglês:
+                    </div>
+                    <div id="ingles">
+                        {{resumeData.englishLevel}}
+                    </div>
+                    <div id="labelEspanhol">
+                        Espanhol:
+                    </div>
+                    <div id="espanhol">
+                        {{resumeData.spanishLevel}}
+                    </div>
+                </div>
+
+                <div class="goals">
+                    <div id="labelGoals">
+                        Objetivos:
+                    </div>
+                    <div id="goals">
+                        {{resumeData.goal}}
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="btnPrint">
+                <button class="btn-success" onclick="window.print()">Imprimir curriculo</button>
+            </div>
+        </div>
+    </div>
+
+</div>

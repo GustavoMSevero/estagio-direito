@@ -52,21 +52,21 @@
     width: 20%;
 }
 
-.semester,
-.state,
-.city {
+.searchSemester,
+.searchState,
+.searchCity {
     display: inline-block;
 }
 
-.semester {
+.searchSemester {
     width: 20%;
 }
 
-.state {
+.searchState {
     width: 23%;
 }
 
-.city {
+.searchCity {
     width: 20%;
 }
 

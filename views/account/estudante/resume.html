@@ -20,30 +20,145 @@
         </div>
     </div>
     <div class="row">
-        
+       <div class="formFillResume">
+           <form>
+                <div id="graduation">
+                    <b>Graduação</b>
+                </div>
+                <div id="university">
+                    <!-- Universidade: -->
+                    <!-- <input type="text" name="" ng-model="studentResumeData.universityName" readonly> -->
+                    Universidade {{studentResumeData.universityName}}
+                </div>
+                <div id="startYear">
+                    Início do Curso: 
+                    {{studentResumeData.startYear}}
+                    <!-- <input type="text" name="" ng-model="studentResumeData.startYear" readonly> -->
+                </div>
+                <div id="conclusionYear">
+                    Fim do Curso {{studentResumeData.conclusionYear}}
+                </div>
+                    
+                <div id="personalData">
+                    <label for="personalData"><b> Dados Pessoais </b></label>
+                </div>
+                <div>
+                    Nome: {{studentResumeData.name}}
+                </div>
+                <div>
+                    Sexo: {{studentResumeData.sex}}
+                </div>
+
+                <div>
+                    <label for="age">Idade: </label>
+                    {{studentResumeData.age}}
+                </div>
+                <div>
+                    <label for="age">Data de Nascimento: </label>
+                    {{studentResumeData.dateBirthday}}
+                </div>
+                <div>
+                    <label for="city">Cidade: </label>
+                    {{studentResumeData.localidade}} - {{studentResumeData.uf}}
+                </div>
+                <div>
+                    <label for="neightbor">Bairro: </label>
+                    {{studentResumeData.bairro}}
+                </div>
+                <div>
+                    <label for="street">Logradouro: </label>
+                    {{studentResumeData.logradouro}}
+                </div>
+
+                <div>
+                    <label for="phone">Telefone: </label>
+                    {{studentResumeData.phone}}
+                </div>
+
+                <div>
+                    <label for="mobilephone">Celular: </label>
+                    {{studentResumeData.mobilephone}}
+                </div>
+
+                <div>
+                    <label for="email">E-mail: </label>
+                    {{studentResumeData.email}}
+                </div>
+
+                <div id="labelOABCard">
+                    <label for="maritalStatus">Carteira OAB</label>
+                </div>
+                <div id="carteiraOAB">
+                    <input class="form-control" type="text" name="OABCard" ng-model="studentResumeData.OABCard">
+                </div>
+
+                <div id="maritalStatus">
+                    <label for="maritalStatus">Estado civil</label>
+                </div>
+                <div id="selectMaritalStatus">
+                    <select class="form-control" name="maritalStatus" ng-model="studentResumeData.maritalStatus">
+                        <option value="">Selecione...</option>
+                        <option value="Solteiro">Solteiro</option>
+                        <option value="Casado">Casado</option>
+                    </select>
+                </div>
+
+                <div id="english">
+                <label for="english">Nível inglês</label> <br>
+                <select class="form-control" name="englishLevel" ng-model="studentResumeData.englishLevel">
+                        <option value="">Seleione o nível</option>
+                        <option value="N/A">N/A</option>
+                        <option value="Básico">Básico</option>
+                        <option value="Intermediário">Intermediário</option>
+                        <option value="Fluente">Fluente</option>
+                </select>
+                </div>
+                
+                <div id="spanish">
+                <label for="spanish">Nível Espanhol</label> <br>
+                <select class="form-control" name="spanishLevel" ng-model="studentResumeData.spanishLevel">
+                        <option value="">Seleione o nível</option>
+                        <option value="N/A">N/A</option>
+                        <option value="Básico">Básico</option>
+                        <option value="Intermediário">Intermediário</option>
+                        <option value="Fluente">Fluente</option>
+                </select>
+                </div>
+
+                <div id="goals">
+                    <label for="goal">Objetivo</label>
+                    <textarea class="form-control" name="goal" ng-model="studentResumeData.goal" cols="30" rows="5"></textarea>
+                </div>
+                
+                <div id="btnSaveResume">
+                    <button class="btn btn-primary" type="button" ng-click="saveResume(studentResumeData)">Salvar currículo</button>
+                </div>
+                <div id="msgSucesso">
+                    {{msg}}
+                </div>
+           </form>
+       </div>
     </div>
     
     <div class="row">
         <div class="col-12 col-sm-12 col-lg-12 uploadResume">
             <form name="formResume">
-              <button class="btn btn-primary" type="button" ng-click="uploadPDF()">Selecionar PDF</button>
+              <button class="btn btn-primary" type="button" ng-click="uploadPDF()">Selecionar Arquivo</button>
             </form>
-        </div>
-        
-        <div class="exibeNomeCurriculo">
-          <div id="labelNomeArquivo">
-            Nome do Arquivo: 
-          </div>
-          <div id="nomeArquivo">
-            {{resumeName}}
-          </div>
         </div>
     </div>
 
     <div class="row">
-      <div class="exibeCurriculo">
-        <!-- <p><a href="{{resumeView}}" target="_black">Abrir arquivo PDF</a></p> -->
-      </div>
+        <div class="col-12 col-sm-12 col-lg-12 exibeNomeCurriculo">
+          <div id="nomeArquivo">
+            {{resumeName}}
+          </div>
+          <div id="exibeCurriculo">
+            <p><a href="{{resumeView}}" target="_black">Abrir arquivo currículo</a></p>
+          </div>
+
+        </div>
+
     </div>
 
 </div>

@@ -7,21 +7,31 @@ app.controller("changeEmailCtrl", ['$scope', '$http', '$location', '$rootScope',
 
 	if(location.hostname == 'localhost'){
 		console.log('localhost')
-		var urlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v2/api/student.php';
-		// var urlOptionPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v2/api/student.php?option=';
-		// var uploadFileUrlPrefix = 'http://localhost:8888/sistemas/Webapps/Projetos/estagio-direito/api/uploadCurriculo.php?iduser=';
+		var urlPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/register.php';
+		var urlOptionPrefix = 'http://localhost:8888/Dev/Web/estagio-direito-v1-v2/api/register.php?option=';
 	} else {
 		var urlPrefix = 'api/register.php';
+		var urlOptionPrefix = 'api/register.php?option=';
 		console.log('externo')
     }
 
-    $scope.updateEmail = function(student) {
-        student.option = 'update email';
-        student.iduser = $scope.iduser;
+    var getUserEmail = function() {
+        var option = 'get email';
+        $http.get(urlOptionPrefix + option + '&iduser=' + $scope.iduser).success(function(response) {
+            // console.log(response);
+            $scope.user = response;
+        })
+    }
+    getUserEmail();
 
-        $http.put(urlPrefix, student).success(function(response) {
+    $scope.updateEmail = function(user) {
+        user.option = 'update email';
+        user.iduser = $scope.iduser;
+        // console.log(user)
+        $http.put(urlPrefix, user).success(function(response) {
+            // console.log(response)
             $scope.msgOK = response.msg;
-            localStorage.setItem('estagio-direito-email', student.email);
+            localStorage.setItem('estagio-direito-email', user.email);
             $scope.email = localStorage.getItem('estagio-direito-email');
         })
     }
