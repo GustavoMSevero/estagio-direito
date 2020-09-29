@@ -35,67 +35,67 @@ app.config(['$routeProvider', function($routeProvider){
     })
 
     .when("/otherData", {
-        templateUrl: "views/account/estudante/otherData.html",
+        templateUrl: "views/account/student/otherData.html",
     })
 
     .when("/studentCollegeData", {
-        templateUrl: "views/account/estudante/studentCollegeData.html",
+        templateUrl: "views/account/student/studentCollegeData.html",
     })
 
     .when("/studentAddress", {
-        templateUrl: "views/account/estudante/studentAddress.html",
+        templateUrl: "views/account/student/studentAddress.html",
     })
 
     .when("/courses", {
-        templateUrl: "views/account/estudante/courses.html",
+        templateUrl: "views/account/student/courses.html",
     })
 
     .when("/editCourse/:idcourse", {
-        templateUrl: "views/account/estudante/editCourse.html",
+        templateUrl: "views/account/student/editCourse.html",
     })
 
     .when("/knowledgeTi", {
-        templateUrl: "views/account/estudante/knowledgeTi.html",
+        templateUrl: "views/account/student/knowledgeTi.html",
     })
 
     .when("/resume", {
-        templateUrl: "views/account/estudante/resume.html",
+        templateUrl: "views/account/student/resume.html",
     })
 
     .when("/officeData", {
-        templateUrl: "views/account/escritorio/officeData.html",
+        templateUrl: "views/account/office/officeData.html",
     })
 
     .when("/advertiseVacancy", {
-        templateUrl: "views/account/escritorio/advertiseVacancy.html",
+        templateUrl: "views/account/office/advertiseVacancy.html",
     })
 
     .when("/editAdvertiseVacancy/:idvacancy", {
-        templateUrl: "views/account/escritorio/editAdvertiseVacancy.html",
+        templateUrl: "views/account/office/editAdvertiseVacancy.html",
     })
 
     .when("/vacancyList", {
-        templateUrl: "views/account/escritorio/vacancyList.html",
+        templateUrl: "views/account/office/vacancyList.html",
     })
 
     .when("/showInterestedStudents/:idvacancy", {
-        templateUrl: "views/account/escritorio/showInterestedStudents.html",
+        templateUrl: "views/account/office/showInterestedStudents.html",
     })
 
     .when("/showStudentResume/:idstudent", {
-        templateUrl: "views/account/escritorio/showStudentResume.html",
+        templateUrl: "views/account/office/showStudentResume.html",
     })
 
     .when("/registerBanners", {
-        templateUrl: "views/account/escritorio/registerBanners.html",
+        templateUrl: "views/account/office/registerBanners.html",
     })
 
     .when("/collegeData", {
-        templateUrl: "views/account/faculdade/collegeData.html",
+        templateUrl: "views/account/college/collegeData.html",
     })
 
     .when("/addBanner", {
-        templateUrl: "views/account/faculdade/addBanner.html",
+        templateUrl: "views/account/college/addBanner.html",
     })
 
 
@@ -129,7 +129,7 @@ app.config(['$routeProvider', function($routeProvider){
     // })
 
     // .when("/cadastrarBanners", {
-    //     templateUrl: "views/conta/escritorio/cadastrarBanners.html",
+    //     templateUrl: "views/conta/office/cadastrarBanners.html",
     // })
 
 
