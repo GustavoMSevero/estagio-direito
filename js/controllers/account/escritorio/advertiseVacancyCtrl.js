@@ -33,27 +33,6 @@ app.controller("advertiseVacancyCtrl", ['$scope', '$http', '$location', '$rootSc
         })
 	};
 
-	// $scope.registerVacancy = function(openVacancyOffice){
-	// 	openVacancyOffice.option = 'register vacancy';
-	// 	openVacancyOffice.iduser = $scope.iduser;
-	// 	openVacancyOffice.publishDate = $scope.publishDate;
-	// 	//console.log(openVacancyOffice)
-	// 	$http.post(urlPrefix, openVacancyOffice).success(function(response){
-	// 		//console.log(response)
-	// 		getAllVacancys();
-	// 		openVacancyOffice = {};
-	// 	})
-	// }
-
-	// var getAllVacancys = function(){
-	// 	option = 'get all vacancys';
-	// 	$http.get(urlOptionPrefix + option + '&iduser=' + $scope.iduser).success(function(response){
-	// 		//console.log(response)
-	// 		$scope.listaOfVacancys = response;
-	// 	})
-	// }
-	// getAllVacancys();
-
 	$scope.registerVacancy = function(openVacancyOffice) {
 		openVacancyOffice.option = 'register vacancy';
 		openVacancyOffice.iduser = $scope.iduser;

@@ -10,7 +10,8 @@ app.controller("studentCollegeDataCtrl", ['$scope', '$http', '$location', '$root
 		var urlPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/student.php';
 		var urlOptionPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/student.php?option=';
 	} else {
-		var urlPrefix = 'api/register.php';
+		var urlPrefix = 'api/student.php';
+		var urlOptionPrefix = 'api/student.php?option=';
 		console.log('externo')
     }
 

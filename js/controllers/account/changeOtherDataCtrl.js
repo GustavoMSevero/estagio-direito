@@ -10,7 +10,8 @@ app.controller("changeOtherDataCtrl", ['$scope', '$http', '$location', '$rootSco
 		var urlPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/register.php';
 		var urlPrefixOption = 'http://localhost:8888/Projects/Web/estagio-direito/api/register.php?option=';
 	} else {
-		var urlPrefix = 'api/register.php';
+        var urlPrefix = 'api/register.php';
+        var urlPrefixOption = 'api/register.php?option=';
 		console.log('externo')
     }
 

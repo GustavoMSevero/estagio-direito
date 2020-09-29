@@ -11,7 +11,9 @@ app.controller("resumeCtrl", ['$scope', '$http', '$location', '$rootScope', func
 		var urlOptionPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/student.php?option=';
 		var uploadFileUrlPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/uploadCurriculo.php?iduser=';
 	} else {
-		var urlPrefix = 'api/register.php';
+		var urlPrefix = 'api/student.php';
+		var urlOptionPrefix = 'api/student.php?option=';
+		var uploadFileUrlPrefix = 'api/uploadCurriculo.php?iduser=';
 		console.log('externo')
 	}
 	

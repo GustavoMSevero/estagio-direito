@@ -12,7 +12,8 @@ app.controller("editCourseCtrl", ['$scope', '$http', '$location', '$routeParams'
 		var urlPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/studentCourse.php';
 		var urlPrefixOption = 'http://localhost:8888/Projects/Web/estagio-direito/api/studentCourse.php?option=';
 	} else {
-		var urlPrefix = 'api/register.php';
+		var urlPrefix = 'api/studentCourse.php';
+		var urlPrefixOption = 'api/studentCourse.php?option=';
 		console.log('externo')
     }
 

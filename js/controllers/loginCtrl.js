@@ -1,16 +1,16 @@
 app.controller("loginCtrl", ['$scope', '$http', '$location', '$rootScope', function ($scope, $http, $location, $rootScope) {
 
 	if(location.hostname == 'localhost'){
-		var urlOptionRegister = 'http://localhost:8888/Projects/Web/estagio-direito/api/register.php';
+		var urlRegister = 'http://localhost:8888/Projects/Web/estagio-direito/api/register.php';
 	} else {
-		var urlPrefix = 'api/vacancy.php';
+		var urlRegister = 'api/register.php';
 		console.log('externo')
 	}
 
     $scope.loginUser = function(user){
         user.option = 'login user';
         //console.log(user)
-        $http.post(urlOptionRegister, user).success(function(response) {
+        $http.post(urlRegister, user).success(function(response) {
             // console.log(response)
             if(response.status == 0){
                 $scope.msgLoginErro = response.msg;

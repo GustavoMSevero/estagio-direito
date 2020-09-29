@@ -11,6 +11,7 @@ app.controller("otherDataCtrl", ['$scope', '$http', '$location', '$rootScope', f
 		var urlPrefixOption = 'http://localhost:8888/Projects/Web/estagio-direito/api/register.php?option=';
 	} else {
 		var urlPrefix = 'api/register.php';
+		var urlPrefixOption = 'api/register.php?option=';
 		console.log('externo')
     }
 

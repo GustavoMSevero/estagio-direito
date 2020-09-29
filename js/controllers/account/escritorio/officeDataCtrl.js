@@ -11,6 +11,7 @@ app.controller("officeDataCtrl", ['$scope', '$http', '$location', '$rootScope', 
 		var urlOptionPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/register.php?option=';
 	} else {
 		var urlPrefix = 'api/register.php';
+		var urlOptionPrefix = 'api/register.php?option=';
 		console.log('externo')
     }
     
@@ -25,8 +26,7 @@ app.controller("officeDataCtrl", ['$scope', '$http', '$location', '$rootScope', 
     getOfficeData();
 
     $scope.getZipcode = function(userOffice){
-        console.log(userOffice.zipcode)
-        let cep = userOffice.zipcode;
+        var cep = userOffice.zipcode;
         $http.get('http://viacep.com.br/ws/'+cep+'/json/').then(function(response){
             //console.log(response.data)
             $scope.userOffice.logradouro = response.data.logradouro;

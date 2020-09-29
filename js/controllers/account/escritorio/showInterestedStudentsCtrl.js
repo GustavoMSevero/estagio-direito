@@ -11,7 +11,8 @@ app.controller("showInterestedStudentsCtrl", ['$scope', '$http', '$location', '$
 		var urlPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/studentVacancy.php.php';
 		var urlOptionPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/studentVacancy.php?option=';
 	} else {
-		var urlPrefix = 'api/vacancy.php';
+		var urlPrefix = 'api/studentVacancy.php.php';
+		var urlOptionPrefix = 'api/studentVacancy.php?option=';
 		console.log('externo')
 	}
 

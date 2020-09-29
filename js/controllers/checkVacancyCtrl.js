@@ -14,6 +14,8 @@ app.controller("checkVacancyCtrl", ['$scope', '$http', '$location', '$routeParam
 		var urlEmailPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/mail.php';
 	} else {
 		var urlPrefix = 'api/vacancy.php';
+		var urlOptionPrefix = 'api/vacancy.php?option=';
+		var urlEmailPrefix = 'api/mail.php';
 		console.log('externo')
 	}
 
