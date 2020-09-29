@@ -12,7 +12,8 @@ app.controller("showStudentResumeCtrl", ['$scope', '$http', '$location', '$route
 		var urlPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/studentVacancy.php.php';
 		var urlOptionPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/studentVacancy.php?option=';
 	} else {
-		var urlPrefix = 'api/vacancy.php';
+		var urlPrefix = 'api/studentVacancy.php.php';
+		var urlOptionPrefix = 'api/studentVacancy.php?option=';
 		console.log('externo')
 	}
 
@@ -34,5 +35,24 @@ app.controller("showStudentResumeCtrl", ['$scope', '$http', '$location', '$route
 
     }
     studentResumeData();
+
+    var getStudentCourses = function() {
+        var option = 'get student courses';
+        $http.get(urlOptionPrefix + option + '&idstudent=' + $scope.idstudent).success(function(coursesResponse) {
+            // console.log(coursesResponse)
+            $scope.studentCourses = coursesResponse;
+        })
+    }
+    getStudentCourses();
+
+    var getTiKnowledge = function() {
+        var option = 'get stundet softwares knowledge';
+        $http.get(urlOptionPrefix + option + '&idstudent=' + $scope.idstudent).success(function(softwareResponse) {
+            // console.log(softwareResponse)
+            $scope.softwares = softwareResponse;
+        })
+
+    }
+    getTiKnowledge();
 	
 }]);

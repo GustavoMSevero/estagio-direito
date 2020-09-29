@@ -132,9 +132,82 @@
 
                 <div>
                     <div id="labelCursos">
-                        Cursos:
+                        Cursos
                     </div>
                 </div>
+
+                <div class="courses" ng-repeat="sc in studentCourses">
+                    
+                    <div class="labelsCourse">
+                        <div id="labelCourseName">
+                            Nome do curso
+                        </div>
+                        <div id="labelSchool_Institution">
+                            Escola/Instituição
+                        </div>
+                        <div id="labelWhere">
+                            Local
+                        </div>
+                        <div id="labelWorkload">
+                            Carga horária
+                        </div>
+                        <div id="labelTypeOfCourse">
+                            Tipo
+                        </div>
+                        <div id="labelMonthYearConclusion">
+                            Conclusão
+                        </div>
+                    </div>
+
+                    <div class="infoCourses">
+                        <dvi id="courseName">
+                            {{sc.courseName}}
+                        </dvi>
+                        <div id="school_Institution">
+                            {{sc.school_Institution}}
+                        </div>
+                        <div id="courseCityState">
+                            {{sc.city}}/{{sc.state}}
+                        </div>
+                        <div id="workload">
+                            {{sc.workload}}
+                        </div>
+                        <div id="typeOfCourse">
+                            {{sc.typeOfCourse}}
+                        </div>
+                        <div id="monthYearConclusion">
+                            {{sc.monthYearConclusion}}
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="ti">
+                    <div id="labelKnowlTi">
+                        Conhecimentos em informática
+                    </div>
+                    <div id="tiSoftwares">
+                        <div ng-show="softwares.mswordShow">
+                            MS Word: Sim
+                        </div>
+                        <div ng-show="softwares.msexcelShow">
+                            MS Excel: Sim
+                        </div>
+                        <div ng-show="softwares.openOfficeWriteShow">
+                            OpenOffice Write: Sim
+                        </div>
+                        <div ng-show="softwares.openOfficeCalcShow">
+                            OpenOffice Calc: Sim
+                        </div>
+                        <div ng-show="softwares.libreOfficeWriteShow">
+                            LibreOffice Write: Sim
+                        </div>
+                        <div ng-show="softwares.libreOfficeCalcShow">
+                            LibreOffice Calc: Sim
+                        </div>
+                    </div>
+                </div>
+            
 
                 <div class="Idiomas">
                     <div id="labelIngles">

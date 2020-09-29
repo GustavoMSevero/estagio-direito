@@ -158,8 +158,45 @@
 }
 
 #labelCursos {
+    margin-top: 10px;
     color: cadetblue;
 }
+
+#labelCourseName,
+#labelSchool_Institution,
+#labelWhere,
+#labelWorkload,
+#labelTypeOfCourse,
+#labelMonthYearConclusion {
+    display: inline-block;
+    color: gray;
+    width: 15%;
+    text-align: center;
+}
+
+#courseName,
+#school_Institution,
+#courseCityState,
+#workload,
+#typeOfCourse,
+#monthYearConclusion {
+    font-size: 12px;
+    display: inline-block;
+    width: 15%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.ti {
+    margin-bottom: 20px;
+}
+
+#labelKnowlTi {
+    margin-top: 10px;
+    color: cadetblue;
+}
+
+
 
 #labelIngles, #ingles {
     display: inline-block;

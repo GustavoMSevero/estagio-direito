@@ -103,7 +103,7 @@ switch ($option) {
                 $startYear = $linha['startYear'];
                 $conclusionYear = $linha['conclusionYear'];
                 $age = $linha['age'];
-                $OABCard = $linha['OABCard'];
+                @$OABCard = $linha['OABCard'];
                 $dateBirthday = $linha['dateBirthday'];
                 $city = $linha['city'];
                 $neighborhood = $linha['neighborhood'];
@@ -115,7 +115,6 @@ switch ($option) {
                 $maritalStatus = $linha['maritalStatus'];
                 $englishLevel = $linha['englishLevel'];
                 $spanishLevel = $linha['spanishLevel'];
-                $intendedSalary = $linha['intendedSalary'];
                 $goal = $linha['goal'];
 
                 $dateBirthdayP = explode('-', $dateBirthday);
@@ -141,8 +140,117 @@ switch ($option) {
                 'maritalStatus' => $maritalStatus,
                 'englishLevel' => $englishLevel,
                 'spanishLevel' => $spanishLevel,
-                'intendedSalary' => $intendedSalary,
                 'goal' => $goal
+            );
+
+            echo json_encode($return);
+
+        } catch (Exception $e) {
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
+        
+        break;
+
+    case 'get student courses':
+
+        $idstudent = $_GET['idstudent'];
+
+        try {
+            
+            $getStudentCourses=$pdo->prepare("SELECT * FROM studentCourse WHERE iduser=:iduser");
+            $getStudentCourses->bindValue(':iduser', $idstudent);
+            $getStudentCourses->execute();
+
+            while ($linha=$getStudentCourses->fetch(PDO::FETCH_ASSOC)) {
+                $courseName = $linha['courseName'];
+                $school_Institution = $linha['school_Institution'];
+                $city = $linha['city'];
+                $state = $linha['state'];
+                $workload = $linha['workload'];
+                $typeOfCourse = $linha['typeOfCourse'];
+                $monthYearConclusion = $linha['monthYearConclusion'];
+            }
+
+            $return[] = array(
+                'courseName' => $courseName,
+                'school_Institution' => $school_Institution,
+                'city' => $city,
+                'state' => $state,
+                'workload' => $workload,
+                'typeOfCourse' => $typeOfCourse,
+                'monthYearConclusion' => $monthYearConclusion
+            );
+
+            echo json_encode($return);
+
+        } catch (Exception $e) {
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
+        
+        break;
+
+    case 'get stundet softwares knowledge':
+
+        $idstudent = $_GET['idstudent'];
+
+        try {
+            $mswordShow = false;
+            $msexcelShow = false;
+            $openOfficeWriteShow = false;
+            $openOfficeCalcShow = false;
+            $libreOfficeWriteShow = false;
+            $libreOfficeCalcShow = false;
+
+            $getStudentSoftwares=$pdo->prepare("SELECT * FROM studentTi WHERE iduser=:iduser");
+            $getStudentSoftwares->bindValue(':iduser', $idstudent);
+            $getStudentSoftwares->execute();
+
+            while ($linha=$getStudentSoftwares->fetch(PDO::FETCH_ASSOC)) {
+                $msword = $linha['msword'];
+                $msexcel = $linha['msexcel'];
+                $openOfficeWrite = $linha['openOfficeWrite'];
+                $openOfficeCalc = $linha['openOfficeCalc'];
+                $libreOfficeWrite = $linha['libreOfficeWrite'];
+                $libreOfficeCalc = $linha['libreOfficeCalc'];
+
+                if ($msword == 1) {
+                    $mswordShow = true;
+                }
+
+                if ($msexcel == 1) {
+                    $msexcelShow = true;
+                }
+
+                if ($openOfficeWrite == 1) {
+                    $openOfficeWriteShow = true;
+                }
+
+                if ($openOfficeCalc == 1) {
+                    $openOfficeCalcShow = true;
+                }
+
+                if ($libreOfficeWrite == 1) {
+                    $libreOfficeWriteShow = true;
+                }
+
+                if ($libreOfficeCalc == 1) {
+                    $libreOfficeCalcShow = true;
+                }
+            }
+
+            $return = array(
+                'msword' => $msword,
+                'mswordShow' => $mswordShow,
+                'msexcel' => $msexcel,
+                'msexcelShow' => $msexcelShow,
+                'openOfficeWrite' => $openOfficeWrite,
+                'openOfficeWriteShow' => $openOfficeWriteShow,
+                'openOfficeCalc' => $openOfficeCalc,
+                'openOfficeCalcShow' => $openOfficeCalcShow,
+                'libreOfficeWrite' => $libreOfficeWrite,
+                'libreOfficeWriteShow' => $libreOfficeWriteShow,
+                'libreOfficeCalc' => $libreOfficeCalc,
+                'libreOfficeCalcShow' => $libreOfficeCalcShow
             );
 
             echo json_encode($return);
