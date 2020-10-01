@@ -13,9 +13,9 @@ app.controller("initialCtrl", ['$scope', '$http', '$location', '$rootScope', fun
     $scope.faculdade = false;
 
     $scope.changeType = function(){
-        if($scope.type == "Escritório"){
+        if($scope.type == "Office"){
             $scope.escritorio == true;
-        } else if($scope.type == "Estudante"){
+        } else if($scope.type == "Student"){
             $scope.estudante == true;
         } else {
             $scope.faculdade == true;

@@ -9,7 +9,7 @@ app.controller("loginCtrl", ['$scope', '$http', '$location', '$rootScope', funct
 
     $scope.loginUser = function(user){
         user.option = 'login user';
-        //console.log(user)
+        // console.log(user)
         $http.post(urlRegister, user).success(function(response) {
             // console.log(response)
             if(response.status == 0){
@@ -22,7 +22,6 @@ app.controller("loginCtrl", ['$scope', '$http', '$location', '$rootScope', funct
                 localStorage.setItem('estagio-direito-usertype', response.usertype);
                 localStorage.setItem('estagio-direito-email', response.email);
                 $location.path('/searchInternship');
-            //     $location.path('/buscaPorSemestre').search({'option': $scope.option, 'half': $scope.half});
             }
         })
     }

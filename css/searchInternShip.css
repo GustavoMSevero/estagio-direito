@@ -88,6 +88,10 @@
     background-color: lightgreen;
 }
 
+#msgNoVacancyFound {
+    text-align: center;
+}
+
 #adds {
 
 }

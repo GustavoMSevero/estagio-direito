@@ -24,7 +24,7 @@ switch ($option) {
 		
 		try {
 
-            if($type == "Escritório"){
+            if($type == "Office"){
 
                 //Escritório
                 $type = $data->type;
@@ -74,7 +74,7 @@ switch ($option) {
 
                 echo json_encode($return);
 
-            } elseif($type == "Estudante"){
+            } elseif($type == "Student"){
 
                 // Estudante
                 $type = $data->type;
@@ -178,6 +178,8 @@ switch ($option) {
 
 		try {
 
+            $return = array();
+
             $getUserType=$pdo->prepare("SELECT * FROM user WHERE email=:email AND userpassword=:password");
             $getUserType->bindValue(":email", $email);
             $getUserType->bindValue(":password", $password);
@@ -205,14 +207,14 @@ switch ($option) {
                     $iduser = $linha['iduser'];
                     $userType = $linha['usertype'];
                 }
-    
+
                 $return = array(
                     'iduser' => $iduser,
                     'usertype' => $userType,
                     'email' => $email
                 );
     
-                if($userType == "Escritório"){
+                if($userType == "Office"){
                     $getUser=$pdo->prepare("SELECT officeName FROM office WHERE iduser=:iduser");
                     $getUser->bindValue(":iduser", $iduser);
                     $getUser->execute();
@@ -220,8 +222,10 @@ switch ($option) {
                     while ($linha=$getUser->fetch(PDO::FETCH_ASSOC)) {
                         $username = $linha['officeName'];
                     }
+
+                    $return['username'] = $username;
     
-                } elseif($userType == "Estudante"){
+                } elseif($userType == "Student"){
                     $getUser=$pdo->prepare("SELECT name FROM student WHERE iduser=:iduser");
                     $getUser->bindValue(":iduser", $iduser);
                     $getUser->execute();
@@ -229,6 +233,8 @@ switch ($option) {
                     while ($linha=$getUser->fetch(PDO::FETCH_ASSOC)) {
                         $username = $linha['name'];
                     }
+
+                    $return['username'] = $username;
     
                 } else {
                     $getUser=$pdo->prepare("SELECT collegeName FROM college WHERE iduser=:iduser");
@@ -238,11 +244,12 @@ switch ($option) {
                     while ($linha=$getUser->fetch(PDO::FETCH_ASSOC)) {
                         $username = $linha['collegeName'];
                     }
-    
+
+                    $return['username'] = $username;
     
                 }
-    
-                $return["username"] = $username;
+
+                array_push($return, $username);
 
                 echo json_encode($return);
 
@@ -331,9 +338,11 @@ switch ($option) {
             $return = array();
 
             $status = 1;
+            $msgEmailAtualizado = "E-mail atualizado com sucesso";
 
             $return = array(
-                'status'	=> $status
+                'status'	=> $status,
+                'msgEmailAtualizado'	=> $msgEmailAtualizado
             );
     
             echo json_encode($return);

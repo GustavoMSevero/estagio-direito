@@ -30,7 +30,7 @@ app.controller("changeEmailCtrl", ['$scope', '$http', '$location', '$rootScope',
         // console.log(user)
         $http.put(urlPrefix, user).success(function(response) {
             // console.log(response)
-            $scope.msgOK = response.msg;
+            $scope.msgEmailAtualizado = response.msgEmailAtualizado;
             localStorage.setItem('estagio-direito-email', user.email);
             $scope.email = localStorage.getItem('estagio-direito-email');
         })

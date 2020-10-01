@@ -6,10 +6,10 @@ app.controller("searchInternShipCtrl", ['$scope', '$http', '$location', '$rootSc
 	$scope.email = localStorage.getItem('estagio-direito-email');
 	
 	if(location.hostname == 'localhost'){
-		var urlPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/vacancy.php.php';
+		var urlPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/vacancy.php';
 		var urlOptionPrefix = 'http://localhost:8888/Projects/Web/estagio-direito/api/vacancy.php?option=';
 	} else {
-		var urlPrefix = 'api/vacancy.php.php';
+		var urlPrefix = 'api/vacancy.php';
 		var urlOptionPrefix = 'api/vacancy.php?option=';
 		console.log('externo')
 	}
@@ -28,18 +28,28 @@ app.controller("searchInternShipCtrl", ['$scope', '$http', '$location', '$rootSc
         $location.path('/');
     }
 
-	var searchAllVacancies = function() {
-		// console.log('Search All Vacancies')
+	var getAllVacancies = function() {
 		var option = 'get all vacancies';
 		$http.get(urlOptionPrefix + option).success(function(response) {
 			// console.log(response)
 			$scope.allVacancies = response;
 		})
 	}
-	searchAllVacancies();
+	getAllVacancies();
 
 	$scope.searchForVacancy = function(vacancy) {
-		console.log(vacancy)
+		vacancy.option = 'search for vacancy';
+		// console.log(vacancy)
+		$http.post(urlPrefix, vacancy).success(function(vacancyResponse) {
+			console.log(vacancyResponse)
+			if (vacancyResponse.status == 0) {
+				$scope.msgNoVacancyFound = vacancyResponse.msg;
+			} else {
+				$scope.msgNoVacancyFound =  '';
+				$scope.allVacancies = vacancyResponse;
+			}
+			
+		})
 	}
 
 	

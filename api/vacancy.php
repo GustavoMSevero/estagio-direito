@@ -76,36 +76,6 @@ switch ($option) {
 
         break;
 
-    case 'update student data':  // O que esse cara faz aqui? Te que ir pra API de estudante
-        //print_r($data);
-        $age = $data->age;
-        $sex = $data->sex;
-        $universityName = $data->universityName;
-        $startYear = $data->startYear;
-        $conclusionYear = $data->conclusionYear;
-        $OABNumberCard = $data->OABNumberCard;
-        $iduser = $data->iduser;
-
-        try {
-
-            $getStudentData=$pdo->prepare("UPDATE student SET age=:age, sex=:sex, universityName=:universityName, startYear=:startYear,
-                                        conclusionYear=:conclusionYear, OABNumberCard=:OABNumberCard 
-                                        WHERE iduser=:iduser");
-            $getStudentData->bindValue(":age", $age);
-            $getStudentData->bindValue(":sex", $sex);
-            $getStudentData->bindValue(":universityName", $universityName);
-            $getStudentData->bindValue(":startYear", $startYear);
-            $getStudentData->bindValue(":conclusionYear", $conclusionYear);
-            $getStudentData->bindValue(":OABNumberCard", $OABNumberCard);
-            $getStudentData->bindValue(":iduser", $iduser);
-            $getStudentData->execute();
-
-        } catch (Exception $e) {
-            echo 'Caught exception: ',  $e->getMessage(), "\n";
-        }
-
-        break;
-
     case 'get all vacancys this office':
         
         $iduser = $_GET['iduser'];
@@ -270,80 +240,79 @@ switch ($option) {
 
         break;
 
-    case 'search vacancy':
+    // case 'search vacancy':
 
-        if($data){
-            @$half = $data->half;
-            @$state = $data->state;
-            @$city = $data->city;
-        }else{
-            $half = $_GET['half'];
-            $state = $_GET['state'];
-            $city = $_GET['city'];
-        }
-        //echo 'half '.$half. ' state '.$state. ' city '.$city;
+    //     if($data){
+    //         @$half = $data->half;
+    //         @$state = $data->state;
+    //         @$city = $data->city;
+    //     }else{
+    //         $half = $_GET['half'];
+    //         $state = $_GET['state'];
+    //         $city = $_GET['city'];
+    //     }
+    //     //echo 'half '.$half. ' state '.$state. ' city '.$city;
 
-        try {
+    //     try {
 
-            $searchVacancy=$pdo->prepare("SELECT * FROM officeVacancy WHERE minimumSchooling=:half 
-                                        OR state=:state 
-                                        OR city=:city
-                                        OR state=:state AND city=:city");
-            $searchVacancy->bindValue(":half", $half);
-            $searchVacancy->bindValue(":state", $state);
-            $searchVacancy->bindValue(":city", $city);
-            $searchVacancy->execute();
+    //         $searchVacancy=$pdo->prepare("SELECT * FROM officeVacancy WHERE minimumSchooling=:half 
+    //                                     OR state=:state 
+    //                                     OR city=:city
+    //                                     OR state=:state AND city=:city");
+    //         $searchVacancy->bindValue(":half", $half);
+    //         $searchVacancy->bindValue(":state", $state);
+    //         $searchVacancy->bindValue(":city", $city);
+    //         $searchVacancy->execute();
 
-            $quantity = $searchVacancy->rowCount();
+    //         $quantity = $searchVacancy->rowCount();
 
-            if($quantity != 0){
+    //         if($quantity != 0){
 
-                while ($linha=$searchVacancy->fetch(PDO::FETCH_ASSOC)) {
+    //             while ($linha=$searchVacancy->fetch(PDO::FETCH_ASSOC)) {
 
-                    $idvacancy = $linha['idvacancy'];
-                    $iduser = $linha['iduser'];
-                    $performanceArea = $linha['performanceArea'];
-                    $neighborhood = $linha['neighborhood'];
-                    $city = $linha['city'];
-                    $state = $linha['state'];
-                    $publishDate = $linha['publishDate'];
+    //                 $idvacancy = $linha['idvacancy'];
+    //                 $iduser = $linha['iduser'];
+    //                 $performanceArea = $linha['performanceArea'];
+    //                 $neighborhood = $linha['neighborhood'];
+    //                 $city = $linha['city'];
+    //                 $state = $linha['state'];
+    //                 $publishDate = $linha['publishDate'];
 
-                    $publishDateP = explode('-', $publishDate);
-                    $publishDate = $publishDateP[2].'/'.$publishDateP[1];
+    //                 $publishDateP = explode('-', $publishDate);
+    //                 $publishDate = $publishDateP[2].'/'.$publishDateP[1];
     
-                    $return[] = array(
-                        'idvacancy' => $idvacancy,
-                        'performanceArea' => $performanceArea,
-                        'neighborhood' => $neighborhood,
-                        'city' => $city,
-                        'state' => $state,
-                        'publishDate' => $publishDate
-                    );
-                }
+    //                 $return[] = array(
+    //                     'idvacancy' => $idvacancy,
+    //                     'performanceArea' => $performanceArea,
+    //                     'neighborhood' => $neighborhood,
+    //                     'city' => $city,
+    //                     'state' => $state,
+    //                     'publishDate' => $publishDate
+    //                 );
+    //             }
     
-                echo json_encode($return);
+    //             echo json_encode($return);
                 
-            } else {
+    //         } else {
 
-                $status = 0;
-                $msg = 'Nenhuma vaga encontrada';
+    //             $status = 0;
+    //             $msg = 'Nenhuma vaga encontrada';
 
-                $return = array(
-                    'status' => $status,
-                    'msg' => $msg
-                );
+    //             $return = array(
+    //                 'status' => $status,
+    //                 'msg' => $msg
+    //             );
                 
-                echo json_encode($return);
+    //             echo json_encode($return);
 
-            }
+    //         }
 
-        } catch (Exception $e) {
-            echo 'Caught exception: ',  $e->getMessage(), "\n";
-        }
+    //     } catch (Exception $e) {
+    //         echo 'Caught exception: ',  $e->getMessage(), "\n";
+    //     }
 
-        break;
+    //     break;
 
-    // case 'get all data vacancy':
     case 'get info vacancy':
 
         $idvacancy = $_GET['idvacancy'];
@@ -612,6 +581,74 @@ switch ($option) {
             echo 'Caught exception: ',  $e->getMessage(), "\n";
         }
 
+        break;
+
+    case 'search for vacancy': // busca por vagas na página principal
+        // print_r($data);
+        @$semester = $data->semester;
+        @$state = $data->state;
+        @$city = $data->city;
+        
+
+        try {
+
+            $searchForVacancy=$pdo->prepare("SELECT * FROM officeVacancy 
+                                        WHERE minimumSchooling=:semester 
+                                        OR state=:state 
+                                        OR city=:city
+                                        OR state=:state AND city=:city");
+            $searchForVacancy->bindValue(":semester", $semester);
+            $searchForVacancy->bindValue(":state", $state);
+            $searchForVacancy->bindValue(":city", $city);
+            $searchForVacancy->execute();
+
+            $quantity = $searchForVacancy->rowCount();
+
+            if($quantity != 0){
+
+                while ($linha=$searchForVacancy->fetch(PDO::FETCH_ASSOC)) {
+
+                    $idvacancy = $linha['idvacancy'];
+                    $iduser = $linha['iduser'];
+                    $performanceArea = $linha['performanceArea'];
+                    $neighborhood = $linha['neighborhood'];
+                    $city = $linha['city'];
+                    $state = $linha['state'];
+                    $publishDate = $linha['publishDate'];
+
+                    $publishDateP = explode('-', $publishDate);
+                    $publishDate = $publishDateP[2].'/'.$publishDateP[1];
+    
+                    $return[] = array(
+                        'idvacancy' => $idvacancy,
+                        'performanceArea' => $performanceArea,
+                        'neighborhood' => $neighborhood,
+                        'city' => $city,
+                        'state' => $state,
+                        'publishDate' => $publishDate
+                    );
+                }
+    
+                echo json_encode($return);
+                
+            } else {
+
+                $status = 0;
+                $msg = 'Nenhuma vaga encontrada';
+
+                $return = array(
+                    'status' => $status,
+                    'msg' => $msg
+                );
+                
+                echo json_encode($return);
+
+            }
+
+        } catch (Exception $e) {
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
+   
         break;
     
     default:

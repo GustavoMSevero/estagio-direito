@@ -37,7 +37,7 @@
                     </div>
                     
                     <div class="inputs">
-                        <select class="form-control searchSemester" name="semester" ng-model="vacancy.semester" required> 
+                        <select class="form-control searchSemester" name="semester" ng-model="vacancy.semester" > 
                             <option value="">Selecione...</option>
                             <option value="0">Sem exigência</option>
                             <option value="1º">1º semestre</option>
@@ -101,14 +101,16 @@
             <div id="paidAdds">
                 Anúncios pagos
             </div>
-
+            <div id="msgNoVacancyFound">
+                {{msgNoVacancyFound}}
+            </div>
             <div id="perfil">
                 <div class="listaExibicaoVagas">
                     <table class="table table-striped">
                       <tbody>
                         <tr ng-repeat="v in allVacancies">
                           <td> Área Direito {{v.performanceArea}}</td>
-                          <td> {{v.whenStart}} - {{v.neighborhood}} - {{v.city}}, {{v.state}} </td>
+                          <td> {{v.neighborhood}} - {{v.city}}, {{v.state}} </td>
                           <td> <a href="#/checkVacancy/{{v.idvacancy}}"> ver </a> </td>
                         </tr>
                       </tbody>
